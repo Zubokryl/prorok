@@ -449,17 +449,19 @@ body {
   .scene .bot-box {
     width: auto;
     max-width: none;
-    margin: 1.2rem auto 0;
+    margin: 1.6rem auto 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   .scene .bot-link {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    border-radius: 0;
     background: transparent;
-    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    border: none;
     padding: 0;
     display: flex;
     align-items: center;
@@ -467,68 +469,55 @@ body {
     box-shadow: none;
     text-decoration: none;
     position: relative;
-    transition: transform 0.4s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
   }
 
-  .scene .bot-link:hover,
-  .scene .bot-link:focus-visible {
-    transform: translateX(-140px);
-    border-color: rgba(255, 255, 255, 0.4);
+  .scene .bot-link:hover {
+    transform: scale(1.08);
   }
 
   .bot-avatar {
-    width: 22px;
-    height: 22px;
+    width: 34px;
+    height: 34px;
     flex-shrink: 0;
     object-fit: contain;
     filter: brightness(0) invert(1);
   }
 
   .bot-text {
-    position: absolute;
-    left: calc(100% + 14px);
-    top: 50%;
-    transform: translateY(-50%) translateX(-10px);
-    opacity: 0;
-    visibility: hidden;
-    background: rgba(10, 12, 18, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    padding: 14px 18px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    z-index: 30;
+    display: block;
+    text-align: center;
     font-style: italic;
     line-height: 1.5;
-    width: 220px;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.88);
-    transition:
-      opacity 0.5s ease 0.15s,
-      transform 0.5s ease 0.15s,
-      visibility 0s linear 0.65s;
-    pointer-events: none;
+    font-size: 0.82rem;
+    color: #fff;
+    opacity: 0;
+    animation: botTextAppear 1s ease forwards;
+    animation-delay: 1.6s;
+    max-width: 260px;
   }
 
   .bot-text strong {
     font-style: normal;
     color: #fff;
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
-  .scene .bot-box:hover .bot-text,
-  .scene .bot-link:focus .bot-text {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0);
-    transition:
-      opacity 0.5s ease 0s,
-      transform 0.5s ease 0s,
-      visibility 0s linear 0s;
+  @keyframes botTextAppear {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
   }
-}
 
 /* Tablets: 481-768px */
 @media (min-width: 481px) and (max-width: 768px) {
