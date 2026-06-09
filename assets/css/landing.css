@@ -326,6 +326,58 @@ body {
   display: none;
 }
 
+/* ============================================
+   TELEGRAM BOT BOX — imported from style.css
+   ============================================ */
+
+.bot-box {
+  margin: 24px 0;
+}
+
+.bot-link {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.bot-link:hover,
+.bot-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: #334155;
+  box-shadow: 0 14px 36px rgba(0,0,0,.24);
+}
+
+.bot-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.bot-text {
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .bot-link {
+    padding: 14px;
+    gap: 12px;
+  }
+  .bot-avatar {
+    width: 56px;
+    height: 56px;
+  }
+}
+
 /* Bot Box Override for Landing — bottom center */
 .scene .bot-box {
   position: relative;
