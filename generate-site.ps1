@@ -1,4 +1,4 @@
-#requires -Version 5.1
+﻿#requires -Version 5.1
 $ErrorActionPreference = 'SilentlyContinue'
 $ProgressPreference = 'SilentlyContinue'
 
@@ -38,17 +38,17 @@ $botBox = @"
                class="bot-link js-telegram-cta"
                data-cta="article-inline"
                data-section="bottom"
-               aria-label="Open Sprosi Proroka bot in Telegram">
+               aria-label="Открыть бота Спроси Пророка в Telegram">
 
                 <img src="/prorok/assets/img/bot-avatar.svg"
-                     alt="Sprosi Proroka bot"
+                     alt="Библейский бот"
                      class="bot-avatar"
                      width="64" height="64"
                      loading="eager" decoding="async">
 
                 <span class="bot-text">
-                    <strong>Get Bible quotes for your situation</strong><br>
-                    Open the Sprosi Proroka bot in Telegram.
+                    <strong>Получите цитаты из Библии для вашей ситуации</strong><br>
+                    Откройте бота «Спроси Пророка» в Telegram — поиск по Библии без AI-генерации.
                 </span>
             </a>
         </div>
@@ -328,8 +328,8 @@ foreach ($key in $sortedKeys) {
 $popularList = $popularItems -join "`n"
 
 $homeContent = @"
-    <p>Site about Christianity and the Bible. Find answers to important questions of faith.</p>
-    <h3>Popular topics</h3>
+    <p>Сайт о христианстве и Библии. Найдите ответы на важные вопросы веры.</p>
+    <h3>Популярные темы</h3>
     <ul>
 $popularList
     </ul>
@@ -338,14 +338,16 @@ $popularList
 $indexTemplatePath = Join-Path $templatesDir "article.html"
 $indexTemplate = Get-Content $indexTemplatePath -Raw -Encoding UTF8
 
-$indexHtml = $indexTemplate -replace '\{\{TITLE\}\}', 'Prorok' `
-                          -replace '\{\{DESCRIPTION\}\}', 'Christianity, Bible, faith, hope, love.' `
+$indexHtml = $indexTemplate -replace '\{\{TITLE\}\}', 'Пророк' `
+                          -replace '\{\{DESCRIPTION\}\}', 'Сайт о христианстве и Библии. Найдите ответы на важные вопросы веры.' `
                           -replace '\{\{CANONICAL\}\}', $indexCanonical `
                           -replace '\{\{GA_TAG\}\}', $gaTag `
                           -replace '\{\{BOT_BOX\}\}', $botBox `
                           -replace '\{\{YEAR\}\}', $script:year `
                           -replace '\{\{CONTENT\}\}', $homeContent
 
+# Fix double "Пророк" in homepage title
+$indexHtml = $indexHtml -replace '<title>Пророк — Пророк</title>', '<title>Пророк — Библия и христианство</title>'
 [System.IO.File]::WriteAllText((Join-Path $outputDir $indexSlug), $indexHtml, [System.Text.UTF8Encoding]::new($false))
 Write-Host "  Generated: $indexSlug"
 $allUrls += $indexCanonical
