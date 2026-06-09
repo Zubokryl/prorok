@@ -2,7 +2,7 @@
    LANDING PAGE — Cinematic Hero
    ============================================ */
 
-/* Scene Container — full viewport */
+/* Scene Container — full viewport, no gaps */
 .scene {
   position: relative;
   width: 100%;
@@ -14,6 +14,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 /* Background Image — full screen cover, no extra space */
