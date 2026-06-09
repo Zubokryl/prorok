@@ -6,8 +6,8 @@
 .scene {
   position: relative;
   width: 100%;
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   color: #f4ecdc;
   display: flex;
@@ -25,7 +25,7 @@ body {
 
 /* Background Image — full screen cover, no extra space */
 .scene-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   transform: scale(1);
@@ -432,19 +432,17 @@ body {
 /* Desktop: 769px+ */
 @media (min-width: 769px) {
   .scene {
-    justify-content: flex-start;
-    padding-top: 4rem;
+    justify-content: center;
   }
 
   .hero {
-    min-height: auto;
     margin-bottom: 3rem;
   }
 
   .glass-wrap {
     position: relative;
     max-width: 400px;
-    margin: 0 auto 2rem;
+    margin: 0;
   }
 
   .symbols {
