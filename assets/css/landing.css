@@ -440,62 +440,58 @@ body {
     padding: 0;
   }
 
-  .bot-box {
+  .scene .landing-bot-box {
     width: 88%;
     max-width: 88%;
     margin: 1.4rem auto 0;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
-  .bot-link {
-    display: block !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    text-decoration: none !important;
-    filter: none !important;
-    transform: none !important;
-    transition: none !important;
+  .scene .landing-bot-link {
+    display: block;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+    text-decoration: none;
     text-align: center;
   }
 
-  .bot-link:hover,
-  .bot-link:focus-visible,
-  .bot-link:hover .bot-avatar,
-  .bot-link:focus .bot-avatar {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    filter: none !important;
-    transform: none !important;
+  .scene .landing-bot-link:hover,
+  .scene .landing-bot-link:focus-visible,
+  .scene .landing-bot-box:hover .landing-bot-link {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    filter: none;
   }
 
-  .bot-avatar {
-    width: 68px !important;
-    height: 68px !important;
-    filter: brightness(0) invert(1) !important;
-    display: block !important;
-    margin: 0 auto !important;
+  .scene .landing-bot-avatar {
+    width: 68px;
+    height: 68px;
+    filter: brightness(0) invert(1);
+    display: block;
+    margin: 0 auto;
   }
 
-  .bot-text {
-    display: block !important;
-    text-align: center !important;
+  .scene .landing-bot-text {
+    display: block;
+    text-align: center;
     font-style: italic;
     font-size: 0.82rem;
-    color: #fff !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    color: #fff;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
   }
 
   .bot-text strong {
@@ -551,30 +547,53 @@ body {
     width: 88%;
     max-width: 88%;
     margin: 1.4rem auto 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .scene .bot-link {
-    background: transparent !important;
-    border: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    filter: none !important;
-    transform: none !important;
-    transition: none !important;
+    display: block;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+    text-align: center;
   }
 
   .scene .bot-link:hover,
   .scene .bot-link:focus-visible,
-  .bot-link:hover,
-  .bot-link:focus-visible {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    transform: none !important;
-    filter: none !important;
+  .scene .bot-box:hover .bot-link {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    filter: none;
+  }
+
+  .scene .bot-avatar {
+    width: 68px;
+    height: 68px;
+    filter: brightness(0) invert(1);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .scene .bot-text {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: #fff;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
   }
 
   .bot-avatar {
