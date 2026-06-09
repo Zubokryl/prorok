@@ -19,14 +19,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Пророк — Один небосвод. Множество путей.">
     <meta name="twitter:description" content="Пространство, где разные традиции говорят на универсальном языке духа.">
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2LRQM94EG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-D2LRQM94EG');
-    </script>
+    {{GA_TAG}}
 </head>
 <body>
     <main class="scene">
@@ -115,25 +108,7 @@
             <span class="scroll-stem"></span>
         </div>
 
-                <div class="bot-box">
-            <a href="https://t.me/SprosiProroka_bot"
-               class="bot-link js-telegram-cta"
-               data-cta="article-inline"
-               data-section="bottom"
-               aria-label="Открыть бота Спроси Пророка в Telegram">
-
-                <img src="/prorok/assets/img/bot-avatar.svg"
-                     alt="Библейский бот"
-                     class="bot-avatar"
-                     width="64" height="64"
-                     loading="eager" decoding="async">
-
-                <span class="bot-text">
-                    <strong>Получите цитаты из Библии для вашей ситуации</strong><br>
-                    Откройте бота «Спроси Пророка» в Telegram — поиск по Библии без AI-генерации.
-                </span>
-            </a>
-        </div>
+        {{BOT_BOX}}
     </main>
     <script src="/prorok/assets/js/main.js"></script>
     <script src="/prorok/assets/js/landing.js"></script>

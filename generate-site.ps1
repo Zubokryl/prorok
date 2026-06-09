@@ -186,7 +186,8 @@ function New-ArticlePage {
                        -replace '\{\{GA_TAG\}\}', $gaTag `
                        -replace '\{\{BOT_BOX\}\}', $botBox `
                        -replace '\{\{YEAR\}\}', $script:year `
-                       -replace '\{\{CONTENT\}\}', $contentHtml
+                       -replace '\{\{CONTENT\}\}', $contentHtml `
+                       -replace '\{\{BACK_LINK\}\}', $backLink
 
     $relDir = Split-Path $slug -Parent
     if ($relDir) {
@@ -282,6 +283,7 @@ foreach ($mdFile in $mdFiles) {
             if ($line -match '^title:\s*(.+)') { $title = $Matches[1].Trim().Trim('"', "'") }
             if ($line -match '^description:\s*(.+)') { $description = $Matches[1].Trim().Trim('"', "'") }
             if ($line -match '^canonical:\s*(.+)') { $canonical = $Matches[1].Trim().Trim('"', "'") }
+            if ($line -match '^backLink:\s*(.+)') { $backLink = $Matches[1].Trim().Trim('"', "'") }
         }
     } else {
         $mdBody = $content
@@ -301,6 +303,13 @@ foreach ($mdFile in $mdFiles) {
         $canonical = "https://prorok.site/$slug"
     }
 
+    if (-not $backLink) {
+        if ($slug -match '^christianity/') { $backLink = '/prorok/christianity/index.html' }
+        elseif ($slug -match '^judaism/') { $backLink = '/prorok/judaism/index.html' }
+        elseif ($slug -match '^islam/') { $backLink = '/prorok/islam/index.html' }
+        else { $backLink = '/prorok/index.html' }
+    }
+
     $contentHtml = Convert-MarkdownToHtml -md $mdBody
     $plainContent = ($contentHtml -replace '<[^>]+>', ' ' -replace '\s+', ' ').Trim()
 
@@ -309,6 +318,35 @@ foreach ($mdFile in $mdFiles) {
     $allMeta[$slug] = @{ title = $title; desc = $description; content = $plainContent }
 
     New-ArticlePage -slug $slug -title $title -description $description -contentHtml $contentHtml -canonical $canonical
+    $pagesGenerated++
+}
+
+# Religion section pages
+$religionPages = @(
+    @{ slug = "christianity/index.html"; template = "christianity.html"; title = "Христианство"; desc = "Христианство: вера в Иисуса Христа, любовь, прощение и вечная жизнь."; canonical = "https://prorok.site/christianity/index.html" },
+    @{ slug = "judaism/index.html"; template = "judaism.html"; title = "Иудаизм"; desc = "Иудаизм: древняя традиция, монотеизм, Тора и мудрость пророков."; canonical = "https://prorok.site/judaism/index.html" },
+    @{ slug = "islam/index.html"; template = "islam.html"; title = "Ислам"; desc = "Ислам: вторая по численности религия мира, основанная на Коране."; canonical = "https://prorok.site/islam/index.html" }
+)
+
+foreach ($rp in $religionPages) {
+    $tplPath = Join-Path $templatesDir $rp.template
+    if (-not (Test-Path $tplPath)) { continue }
+    $tpl = Get-Content $tplPath -Raw -Encoding UTF8
+    $safeTitle = [System.Security.SecurityElement]::Escape($rp.title)
+    $safeDesc = [System.Security.SecurityElement]::Escape($rp.desc)
+    $safeCanonical = [System.Security.SecurityElement]::Escape($rp.canonical)
+    $pageHtml = $tpl -replace '\{\{TITLE\}\}', $safeTitle `
+                   -replace '\{\{DESCRIPTION\}\}', $safeDesc `
+                   -replace '\{\{CANONICAL\}\}', $safeCanonical `
+                   -replace '\{\{GA_TAG\}\}', $gaTag `
+                   -replace '\{\{BOT_BOX\}\}', $botBox `
+                   -replace '\{\{YEAR\}\}', $script:year
+    $outDir = Join-Path $outputDir (Split-Path $rp.slug -Parent)
+    New-Item -Path $outDir -ItemType Directory -Force | Out-Null
+    [System.IO.File]::WriteAllText((Join-Path $outputDir $rp.slug), $pageHtml, [System.Text.UTF8Encoding]::new($false))
+    $allUrls += $rp.canonical
+    $allSlugs += $rp.slug
+    Write-Host "  Generated: $($rp.slug)"
     $pagesGenerated++
 }
 
@@ -335,19 +373,13 @@ $popularList
     </ul>
 "@
 
-$indexTemplatePath = Join-Path $templatesDir "article.html"
+$indexTemplatePath = Join-Path $templatesDir "landing.html"
 $indexTemplate = Get-Content $indexTemplatePath -Raw -Encoding UTF8
 
-$indexHtml = $indexTemplate -replace '\{\{TITLE\}\}', 'Пророк' `
-                          -replace '\{\{DESCRIPTION\}\}', 'Сайт о христианстве и Библии. Найдите ответы на важные вопросы веры.' `
-                          -replace '\{\{CANONICAL\}\}', $indexCanonical `
-                          -replace '\{\{GA_TAG\}\}', $gaTag `
+$indexHtml = $indexTemplate -replace '\{\{GA_TAG\}\}', $gaTag `
                           -replace '\{\{BOT_BOX\}\}', $botBox `
-                          -replace '\{\{YEAR\}\}', $script:year `
-                          -replace '\{\{CONTENT\}\}', $homeContent
+                          -replace '\{\{YEAR\}\}', $script:year
 
-# Fix double "Пророк" in homepage title
-$indexHtml = $indexHtml -replace '<title>Пророк — Пророк</title>', '<title>Пророк — Библия и христианство</title>'
 [System.IO.File]::WriteAllText((Join-Path $outputDir $indexSlug), $indexHtml, [System.Text.UTF8Encoding]::new($false))
 Write-Host "  Generated: $indexSlug"
 $allUrls += $indexCanonical
