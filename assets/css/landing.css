@@ -9,6 +9,7 @@
   min-height: 100vh;
   min-height: 100dvh;
   overflow-x: hidden;
+  overflow-y: auto;
   color: #f4ecdc;
   display: flex;
   flex-direction: column;
@@ -331,9 +332,10 @@ body {
 .scene .bot-box {
   position: relative;
   z-index: 20;
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 0;
   width: calc(100% - 2rem);
   max-width: 400px;
+  flex-shrink: 0;
 }
 
 .scene .bot-link {
@@ -350,12 +352,12 @@ body {
 @media (max-width: 480px) {
   .scene {
     min-height: 100vh;
-    padding: 0;
+    padding-bottom: 1rem;
   }
 
   .hero {
-    padding: 1.5rem 1rem;
-    margin-top: 0.5rem;
+    padding: 1.5rem 1rem 1rem;
+    margin-top: 0;
   }
 
   .hero-title .line {
@@ -370,14 +372,13 @@ body {
 
   .glass-wrap {
     max-width: calc(100% - 2rem);
-    margin: 0.75rem 1rem;
+    margin: 0.75rem auto;
     padding: 0;
-    flex-shrink: 0;
   }
 
   .symbols {
     gap: 16px;
-    margin: 1rem 0;
+    margin: 1rem auto 0;
     flex-direction: row;
     justify-content: center;
   }
@@ -387,8 +388,7 @@ body {
   }
 
   .scene .bot-box {
-    position: relative;
-    margin: 1rem auto;
+    margin: 1rem auto 0;
     width: calc(100% - 2rem);
     max-width: calc(100% - 2rem);
   }
@@ -398,30 +398,29 @@ body {
 @media (min-width: 481px) and (max-width: 768px) {
   .scene {
     min-height: 100vh;
-    padding: 0;
+    padding-bottom: 1rem;
   }
 
   .hero {
-    padding: 2rem 1rem;
-    margin-top: 1rem;
+    padding: 2rem 1rem 1rem;
+    margin-top: 0;
   }
 
   .glass-wrap {
     max-width: 90%;
     margin: 1rem auto;
-    flex-shrink: 0;
+    padding: 0;
   }
 
   .symbols {
     gap: 24px;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto 0;
     flex-direction: row;
     justify-content: center;
   }
 
   .scene .bot-box {
-    position: relative;
-    margin: 1.5rem auto;
+    margin: 1.5rem auto 0;
     width: calc(100% - 2rem);
     max-width: 400px;
   }
@@ -430,21 +429,22 @@ body {
 /* Desktop: 769px+ */
 @media (min-width: 769px) {
   .scene {
-    min-height: auto;
+    min-height: 100vh;
+    padding: 0;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto;
-    justify-items: center;
-    padding: 4rem 2rem;
-    gap: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero {
-    grid-column: 1 / 2;
-    grid-row: 1;
-    margin-bottom: 1rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0;
+    margin: 0;
+    width: auto;
   }
 
   .hero-title {
@@ -452,28 +452,21 @@ body {
   }
 
   .glass-wrap {
-    grid-column: 1 / 2;
-    grid-row: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     max-width: 450px;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem;
   }
 
-  .scene .bot-box {
-    grid-column: 1 / 2;
-    grid-row: 3;
-    position: relative;
-    margin: 1rem auto 0;
-    width: auto;
-    max-width: 450px;
-  }
-
-  /* Symbols on the right side, vertically */
   .symbols {
-    grid-column: 2 / 3;
-    grid-row: 1 / 4;
+    position: absolute;
+    right: clamp(40px, 5vw, 100px);
+    top: 50%;
+    transform: translateY(-50%);
     flex-direction: column;
-    align-self: center;
     gap: clamp(40px, 5vw, 56px);
     margin: 0;
     width: auto;
@@ -484,15 +477,20 @@ body {
   .sym .label {
     display: block;
   }
+
+  .scene .bot-box {
+    position: absolute;
+    bottom: clamp(30px, 4vh, 50px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: auto;
+    max-width: 400px;
+  }
 }
 
 /* Large desktop: 1200px+ */
 @media (min-width: 1200px) {
-  .scene {
-    padding: 5rem 3rem;
-    gap: 3rem 6rem;
-  }
-
   .hero-title {
     max-width: 700px;
   }
@@ -502,6 +500,7 @@ body {
   }
 
   .symbols {
+    right: clamp(60px, 6vw, 150px);
     gap: clamp(48px, 6vw, 64px);
   }
 }
