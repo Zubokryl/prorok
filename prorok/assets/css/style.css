@@ -14,7 +14,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
@@ -23,7 +23,9 @@ body {
     line-height: 1.7;
     color: var(--color-text);
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 /* Header */
