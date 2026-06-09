@@ -422,21 +422,32 @@
 /* Desktop: 769px+ */
 @media (min-width: 769px) {
   .scene {
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 4rem;
   }
 
   .hero {
     min-height: auto;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .glass-wrap {
-    max-width: 420px;
-    margin: 0 auto;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto 2rem;
   }
 
   .symbols {
-    margin-top: 2rem;
+    position: absolute;
+    right: clamp(20px, 4vw, 80px);
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: clamp(28px, 4vw, 44px);
+  }
+
+  .sym .label {
+    display: block;
   }
 
   .scene .bot-box {

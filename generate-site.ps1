@@ -47,7 +47,7 @@ $botBox = @"
                      loading="eager" decoding="async">
 
                 <span class="bot-text">
-                    <strong>Получите цитаты из Библии для вашей ситуации</strong><br>
+                    <strong>Узнайте, что говорят пророки о вашей ситуации</strong><br>
                     Откройте бота «Спроси Пророка» в Telegram — поиск по Библии без AI-генерации.
                 </span>
             </a>
