@@ -26,8 +26,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate sitemap
-        run: pwsh generate-sitemap.ps1
+      - name: Generate site
+        run: pwsh generate-site.ps1
+        env:
+          POWERSHELL_TELEMETRY_OPTOUT: 1
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

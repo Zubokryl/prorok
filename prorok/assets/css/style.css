@@ -176,41 +176,50 @@ footer {
 
 /* Telegram Bot Box */
 .bot-box {
-    margin-top: 3rem;
-    padding: 1.2rem 1.5rem;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 14px;
-    background: rgba(255,255,255,0.65);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-}
-
-.bot-box:hover {
-    background: rgba(255,255,255,0.85);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    margin: 24px 0;
 }
 
 .bot-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-primary);
-    font-weight: 500;
-    font-size: 1rem;
-    gap: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
-.bot-link:hover {
-    color: var(--color-dark);
+.bot-link:hover,
+.bot-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: #334155;
+  box-shadow: 0 14px 36px rgba(0,0,0,.24);
 }
 
 .bot-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  flex: 0 0 auto;
+}
+
+.bot-text {
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .bot-link {
+    padding: 14px;
+    gap: 12px;
+  }
+  .bot-avatar {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 /* Button */
