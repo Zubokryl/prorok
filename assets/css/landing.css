@@ -330,11 +330,11 @@ body {
    TELEGRAM BOT BOX — imported from style.css
    ============================================ */
 
-.bot-box {
+.landing-bot-box {
   margin: 24px 0;
 }
 
-.bot-link {
+.landing-bot-link {
   display: flex;
   gap: 16px;
   align-items: center;
@@ -348,14 +348,14 @@ body {
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
-.bot-link:hover,
-.bot-link:focus-visible {
+.landing-bot-link:hover,
+.landing-bot-link:focus-visible {
   transform: translateY(-1px);
   border-color: #334155;
   box-shadow: 0 14px 36px rgba(0,0,0,.24);
 }
 
-.bot-avatar {
+.landing-bot-avatar {
   width: 64px;
   height: 64px;
   border-radius: 14px;
@@ -363,23 +363,23 @@ body {
   object-fit: contain;
 }
 
-.bot-text {
+.landing-bot-text {
   line-height: 1.45;
 }
 
 @media (max-width: 640px) {
-  .bot-link {
+  .landing-bot-link {
     padding: 14px;
     gap: 12px;
   }
-  .bot-avatar {
+  .landing-bot-avatar {
     width: 56px;
     height: 56px;
   }
 }
 
 /* Bot Box Override for Landing — bottom center */
-.scene .bot-box {
+.scene .landing-bot-box {
   position: relative;
   bottom: auto;
   left: auto;
@@ -494,7 +494,7 @@ body {
     margin: 0;
   }
 
-  .bot-text strong {
+  .landing-bot-text strong {
     font-style: normal;
     color: #fff;
     font-weight: 700;
@@ -543,7 +543,7 @@ body {
     padding: 0;
   }
 
-  .scene .bot-box {
+  .scene .landing-bot-box {
     width: 88%;
     max-width: 88%;
     margin: 1.4rem auto 0;
@@ -552,7 +552,7 @@ body {
     -webkit-backdrop-filter: none;
   }
 
-  .scene .bot-link {
+  .scene .landing-bot-link {
     display: block;
     background: transparent;
     border: none;
@@ -564,9 +564,9 @@ body {
     text-align: center;
   }
 
-  .scene .bot-link:hover,
-  .scene .bot-link:focus-visible,
-  .scene .bot-box:hover .bot-link {
+  .scene .landing-bot-link:hover,
+  .scene .landing-bot-link:focus-visible,
+  .scene .landing-bot-box:hover .landing-bot-link {
     background: transparent;
     border: none;
     box-shadow: none;
@@ -574,7 +574,7 @@ body {
     filter: none;
   }
 
-  .scene .bot-avatar {
+  .scene .landing-bot-avatar {
     width: 68px;
     height: 68px;
     filter: brightness(0) invert(1);
@@ -582,7 +582,7 @@ body {
     margin: 0 auto;
   }
 
-  .scene .bot-text {
+  .scene .landing-bot-text {
     display: block;
     text-align: center;
     font-style: italic;
@@ -596,20 +596,20 @@ body {
     margin: 0;
   }
 
-  .bot-avatar {
+  .landing-bot-avatar {
     width: 68px;
     height: 68px;
     filter: brightness(0) invert(1);
   }
 
-  .bot-text {
+  .landing-bot-text {
     text-align: center;
     font-style: italic;
     font-size: 0.82rem;
     color: #fff;
   }
 
-  .bot-text strong {
+  .landing-bot-text strong {
     font-style: normal;
     color: #fff;
     font-weight: 700;
@@ -639,7 +639,7 @@ body {
     margin-top: 1.5rem;
   }
 
-  .scene .bot-box {
+  .scene .landing-bot-box {
     position: relative;
     bottom: auto;
     left: auto;
@@ -649,7 +649,7 @@ body {
     margin: 1.5rem auto 0;
   }
 
-  .scene .bot-link {
+  .scene .landing-bot-link {
     width: auto;
     height: auto;
     border-radius: 0;
@@ -663,30 +663,30 @@ body {
     text-decoration: none;
   }
 
-  .scene .bot-link:hover,
-  .scene .bot-link:focus-visible {
+  .scene .landing-bot-link:hover,
+  .scene .landing-bot-link:focus-visible {
     background: transparent;
     border: none;
     box-shadow: none;
     outline: none;
   }
 
-  .scene .bot-link:hover .bot-avatar {
+  .scene .landing-bot-link:hover .landing-bot-avatar {
     filter: brightness(0) invert(1)
       drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
       drop-shadow(0 0 16px rgba(220, 220, 255, 0.3))
       drop-shadow(0 0 32px rgba(200, 200, 255, 0.18));
   }
 
-  .bot-link:hover,
-  .bot-link:focus-visible {
+  .landing-bot-link:hover,
+  .landing-bot-link:focus-visible {
     background: transparent;
     border: none;
     box-shadow: none;
     transform: none;
   }
 
-  .bot-avatar {
+  .landing-bot-avatar {
     width: 58px;
     height: 58px;
     flex-shrink: 0;
@@ -695,13 +695,13 @@ body {
     transition: filter 0.6s ease;
   }
 
-  .bot-text {
+  .landing-bot-text {
     font-style: italic;
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
   }
 
-  .bot-text strong {
+  .landing-bot-text strong {
     font-style: normal;
     color: #fff;
   }
@@ -742,7 +742,7 @@ body {
     display: block;
   }
 
-  .scene .bot-box {
+  .scene .landing-bot-box {
     position: fixed;
     right: clamp(30px, 4vw, 80px);
     top: 50%;
@@ -753,7 +753,7 @@ body {
     z-index: 20;
   }
 
-  .scene .bot-link {
+  .scene .landing-bot-link {
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -768,14 +768,14 @@ body {
     text-decoration: none;
   }
 
-  .scene .bot-link:hover .bot-avatar {
+  .scene .landing-bot-link:hover .landing-bot-avatar {
     filter: brightness(0) invert(1)
       drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
       drop-shadow(0 0 22px rgba(220, 220, 255, 0.4))
       drop-shadow(0 0 50px rgba(200, 200, 255, 0.25));
   }
 
-  .bot-avatar {
+  .landing-bot-avatar {
     width: 28px;
     height: 28px;
     flex-shrink: 0;
@@ -784,7 +784,7 @@ body {
     transition: filter 0.6s ease;
   }
 
-  .bot-text {
+  .landing-bot-text {
     position: absolute;
     right: calc(100% + 16px);
     top: 50%;
@@ -807,7 +807,7 @@ body {
     pointer-events: none;
   }
 
-  .bot-text strong {
+  .landing-bot-text strong {
     font-style: normal;
     color: #fff;
     font-weight: 700;
@@ -816,8 +816,8 @@ body {
     margin-bottom: 4px;
   }
 
-  .scene .bot-box:hover .bot-text,
-  .scene .bot-link:focus .bot-text {
+  .scene .landing-bot-box:hover .landing-bot-text,
+  .scene .landing-bot-link:focus .landing-bot-text {
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(0);
@@ -843,7 +843,7 @@ body {
     margin: 0 auto;
   }
 
-  .scene .bot-box {
+  .scene .landing-bot-box {
     right: calc(50% - 460px + 4vw);
     top: 50%;
     transform: translateY(-50%);
