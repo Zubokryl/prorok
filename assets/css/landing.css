@@ -128,7 +128,7 @@ body {
 
 .hero-title .line {
   display: block;
-  font-size: clamp(1.4rem, 4vw, 3.8rem);
+  font-size: clamp(1.7rem, 4.5vw, 4.3rem);
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.08;
@@ -416,7 +416,7 @@ body {
   }
 
   .hero-title .line {
-    font-size: clamp(1.35rem, 9vw, 2.4rem);
+    font-size: clamp(1.35rem, 9vw, 2.9rem);
     letter-spacing: 0.03em;
     line-height: 1.18;
   }
@@ -458,23 +458,22 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(10, 12, 18, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.4),
-      0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
     text-decoration: none;
     position: relative;
+    transition: transform 0.4s ease, border-color 0.3s ease;
   }
 
   .scene .bot-link:hover,
   .scene .bot-link:focus-visible {
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+    transform: translateX(-140px);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .bot-avatar {
@@ -482,15 +481,16 @@ body {
     height: 22px;
     flex-shrink: 0;
     object-fit: contain;
+    filter: brightness(0) invert(1);
   }
 
   .bot-text {
-    display: none;
     position: absolute;
-    bottom: calc(100% + 14px);
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
+    left: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+    visibility: hidden;
     background: rgba(10, 12, 18, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
@@ -499,23 +499,34 @@ body {
     z-index: 30;
     font-style: italic;
     line-height: 1.5;
-    text-indent: 0;
+    width: 220px;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.88);
+    transition:
+      opacity 0.5s ease 0.15s,
+      transform 0.5s ease 0.15s,
+      visibility 0s linear 0.65s;
+    pointer-events: none;
   }
 
   .bot-text strong {
     font-style: normal;
     color: #fff;
     font-weight: 700;
+    font-size: 0.82rem;
     display: block;
     margin-bottom: 4px;
-    font-size: 0.82rem;
   }
 
   .scene .bot-box:hover .bot-text,
   .scene .bot-link:focus .bot-text {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+    transition:
+      opacity 0.5s ease 0s,
+      transform 0.5s ease 0s,
+      visibility 0s linear 0s;
   }
 }
 
