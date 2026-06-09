@@ -24,6 +24,13 @@ body {
   padding: 0;
 }
 
+/* Hide header, nav, footer on landing page */
+header,
+nav,
+footer {
+  display: none;
+}
+
 /* Background Image — full screen cover, no extra space */
 .scene-bg {
   position: fixed;
@@ -344,6 +351,13 @@ body {
   border: 1px solid rgba(255,255,255,0.1);
 }
 
+.scene .bot-text {
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ============================================
    RESPONSIVE — all screens from 300px+
    ============================================ */
@@ -392,6 +406,10 @@ body {
     width: calc(100% - 2rem);
     max-width: calc(100% - 2rem);
   }
+
+  .scene .bot-text strong {
+    display: none;
+  }
 }
 
 /* Tablets: 481-768px */
@@ -423,6 +441,10 @@ body {
     margin: 1.5rem auto 0;
     width: calc(100% - 2rem);
     max-width: 400px;
+  }
+
+  .scene .bot-text strong {
+    display: none;
   }
 }
 
@@ -486,6 +508,10 @@ body {
     margin: 0;
     width: auto;
     max-width: 400px;
+  }
+
+  .scene .bot-text strong {
+    display: inline;
   }
 }
 
