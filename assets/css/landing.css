@@ -447,21 +447,27 @@ body {
   }
 
   .scene .bot-link {
-    background: transparent;
-    border: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    box-shadow: none;
-    padding: 0;
-    border-radius: 0;
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   .scene .bot-link:hover,
-  .scene .bot-link:focus-visible {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    transform: none;
+  .scene .bot-link:focus-visible,
+  .bot-link:hover,
+  .bot-link:focus-visible {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
   }
 
   .bot-avatar {
