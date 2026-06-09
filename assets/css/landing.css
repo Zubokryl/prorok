@@ -648,24 +648,6 @@ body {
     max-width: 380px;
   }
 
-  .scene .bot-link {
-    background: rgba(10, 12, 18, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 1.2rem 1.4rem;
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    text-decoration: none;
-    box-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.4),
-      0 12px 40px rgba(0, 0, 0, 0.55),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    color: #fff;
-  }
-
   .symbols {
     right: 80px;
     gap: 40px;
