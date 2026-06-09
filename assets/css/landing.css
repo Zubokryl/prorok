@@ -124,9 +124,10 @@ body {
 
 .hero-title .line {
   display: block;
-  font-size: clamp(2rem, 8vw, 6rem);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: clamp(1.4rem, 4vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
   color: #fff;
   opacity: 0;
   animation: titleEnter 1.2s ease forwards;
