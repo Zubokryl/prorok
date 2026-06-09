@@ -2,15 +2,17 @@
    LANDING PAGE — Cinematic Hero
    ============================================ */
 
-/* Scene Container */
+/* Scene Container — full viewport, no overflow hidden on small screens */
 .scene {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
   overflow: hidden;
   color: #f4ecdc;
 }
 
-/* Background Image */
+/* Background Image — full width */
 .scene-bg {
   position: absolute;
   inset: -20px;
@@ -22,6 +24,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   filter: brightness(0.55) saturate(0.8);
 }
 
@@ -29,8 +32,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%),
-    linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%),
+    linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
 }
 
 /* Lightning Flash */
@@ -85,11 +88,12 @@
   100% { transform: translate(0, 0); }
 }
 
-/* Topbar */
+/* Topbar — full width */
 .topbar {
   position: relative;
   z-index: 10;
-  padding: 1.5rem 2.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -100,13 +104,13 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  padding: 0;
 }
 
 .topbar-logo {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 3vw, 1.4rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   color: #fff;
@@ -115,7 +119,7 @@
 
 .topbar-nav {
   display: flex;
-  gap: 2rem;
+  gap: clamp(0.75rem, 3vw, 2rem);
 }
 
 .topbar-nav a {
@@ -123,7 +127,7 @@
   text-decoration: none;
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem);
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
   text-transform: uppercase;
@@ -133,15 +137,17 @@
   color: #fff;
 }
 
-/* Hero Title */
+/* Hero Title — centered, responsive */
 .hero {
   position: relative;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
-  padding: 2rem;
+  min-height: 45vh;
+  min-height: 45dvh;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 .hero-title {
@@ -149,13 +155,15 @@
   text-align: center;
   line-height: 1.15;
   text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 900px;
 }
 
 .hero-title .line {
   display: block;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(1.6rem, 7vw, 5rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: #fff;
   opacity: 0;
   animation: titleEnter 1.2s ease forwards;
@@ -172,8 +180,8 @@
 
 .hero-title .ornament {
   display: block;
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
+  margin-top: clamp(0.75rem, 2vw, 1.5rem);
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
   letter-spacing: 0.3em;
   color: rgba(255,255,255,0.5);
   opacity: 0;
@@ -194,13 +202,24 @@
   }
 }
 
-/* Glassmorphism Block */
+/* Glassmorphism Block — below title on mobile, left on desktop */
 .glass-wrap {
-  position: absolute;
-  bottom: 120px;
-  left: 40px;
+  position: relative;
   z-index: 10;
-  max-width: 380px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@media (min-width: 769px) {
+  .glass-wrap {
+    position: absolute;
+    bottom: 100px;
+    left: clamp(20px, 5vw, 60px);
+    margin: 0;
+    max-width: min(380px, 35vw);
+  }
 }
 
 .glass {
@@ -208,7 +227,7 @@
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: 16px;
-  padding: 1.8rem 2rem;
+  padding: clamp(1rem, 3vw, 1.8rem) clamp(1rem, 3vw, 2rem);
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   position: relative;
 }
@@ -228,7 +247,7 @@
 
 .glass p {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
   font-weight: 300;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
@@ -239,12 +258,12 @@
 /* Religious Symbols */
 .symbols {
   position: absolute;
-  right: 60px;
+  right: clamp(15px, 4vw, 60px);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(24px, 5vw, 40px);
   z-index: 10;
 }
 
@@ -267,8 +286,8 @@
 
 .sym {
   position: relative;
-  width: 78px;
-  height: 78px;
+  width: clamp(56px, 12vw, 78px);
+  height: clamp(56px, 12vw, 78px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -324,11 +343,11 @@
 
 .sym .label {
   position: absolute;
-  right: calc(100% + 18px);
+  right: calc(100% + 12px);
   top: 50%;
   transform: translateY(-50%) translateX(-6px);
-  font-size: 10px;
-  letter-spacing: 0.4em;
+  font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.7);
   opacity: 0;
@@ -346,8 +365,8 @@
 .sym:hover .label { opacity: 0.9; transform: translateY(-50%) translateX(0); }
 
 .sym-icon {
-  width: 36px;
-  height: 36px;
+  width: clamp(24px, 6vw, 36px);
+  height: clamp(24px, 6vw, 36px);
   position: relative;
   z-index: 1;
 }
@@ -355,11 +374,11 @@
 /* Footer Chapter */
 .foot {
   position: absolute;
-  bottom: 30px;
-  right: 40px;
+  bottom: 20px;
+  right: 20px;
   z-index: 10;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
   letter-spacing: 0.3em;
   color: rgba(255,255,255,0.35);
   text-transform: uppercase;
@@ -368,19 +387,19 @@
 /* Scroll Hint */
 .scroll-hint {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .scroll-text {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: clamp(0.55rem, 1.5vw, 0.7rem);
   letter-spacing: 0.3em;
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
@@ -388,7 +407,7 @@
 
 .scroll-stem {
   width: 1px;
-  height: 40px;
+  height: clamp(24px, 5vw, 40px);
   background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
   animation: pulse 2s ease-in-out infinite;
 }
@@ -401,11 +420,13 @@
 /* Bot Box Override for Landing */
 .scene .bot-box {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
   margin: 0;
+  width: calc(100% - 2rem);
+  max-width: 400px;
 }
 
 .scene .bot-link {
@@ -414,14 +435,51 @@
   border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ============================================
+   RESPONSIVE — all screens from 300px+
+   ============================================ */
+
+/* Small phones: 300-480px */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .topbar-logo {
+    font-size: 1rem;
+  }
+
+  .topbar-nav {
+    gap: 0.5rem;
+  }
+
+  .topbar-nav a {
+    font-size: 0.65rem;
+    letter-spacing: 0.03em;
+  }
+
+  .hero {
+    min-height: 40vh;
+    min-height: 40dvh;
+    padding: 1rem;
+  }
+
+  .hero-title .line {
+    font-size: clamp(1.3rem, 8vw, 2rem);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-title .ornament {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+
   .glass-wrap {
     position: relative;
     bottom: auto;
     left: auto;
     max-width: 100%;
-    margin: 2rem 1rem;
+    margin: 1rem 0.75rem;
   }
 
   .symbols {
@@ -431,7 +489,59 @@
     transform: none;
     flex-direction: row;
     justify-content: center;
-    gap: 24px;
+    gap: 16px;
+    margin: 1.5rem 0;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .sym .label {
+    display: none;
+  }
+
+  .foot {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  .scene .bot-box {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0.75rem;
+  }
+}
+
+/* Tablets: 481-768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .glass-wrap {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+
+  .symbols {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 28px;
     margin: 2rem 0;
   }
 
@@ -456,14 +566,70 @@
   }
 
   .hero-title .line {
-    font-size: clamp(1.8rem, 8vw, 3rem);
+    font-size: clamp(1.8rem, 7vw, 3.5rem);
   }
 
-  .topbar {
-    padding: 1rem 1.5rem;
+  .scene .bot-box {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+  }
+}
+
+/* Desktop: 769px+ */
+@media (min-width: 769px) {
+  .hero {
+    min-height: 55vh;
+    min-height: 55dvh;
   }
 
-  .topbar-nav {
-    gap: 1rem;
+  .glass-wrap {
+    position: absolute;
+    bottom: 100px;
+    left: clamp(30px, 5vw, 80px);
+    margin: 0;
+    max-width: min(380px, 35vw);
+  }
+
+  .symbols {
+    position: absolute;
+    right: clamp(20px, 4vw, 80px);
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: clamp(28px, 4vw, 44px);
+  }
+
+  .sym .label {
+    display: block;
+  }
+
+  .scene .bot-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 400px;
+    margin: 0;
+  }
+}
+
+/* Large desktop: 1200px+ */
+@media (min-width: 1200px) {
+  .topbar-inner {
+    max-width: 1200px;
+  }
+
+  .hero-title {
+    max-width: 1000px;
+  }
+
+  .glass-wrap {
+    max-width: 420px;
   }
 }
