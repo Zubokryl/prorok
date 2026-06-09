@@ -143,7 +143,7 @@ body {
 
 .hero-title .line.two {
   animation-delay: 0.6s;
-  color: #e8c96d;
+  color: #c9d8e8;
 }
 
 .hero-title .ornament {
@@ -389,14 +389,6 @@ body {
   margin: 1rem auto 0;
 }
 
-.scene .bot-link {
-  background: transparent;
-  border: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
-}
-
 /* ============================================
    RESPONSIVE — all screens from 300px+
    ============================================ */
@@ -451,11 +443,74 @@ body {
   .scene .bot-box {
     width: auto;
     max-width: none;
-    margin: 1.6rem auto 0;
+    margin: 1.4rem auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.6rem;
+  }
+
+  .bot-avatar {
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  .bot-text {
+    text-align: center;
+    font-style: italic;
+    line-height: 1.5;
+    font-size: 0.82rem;
+    color: #fff;
+  }
+
+  .bot-text strong {
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .scene .bot-link {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .bot-avatar {
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+  }
+
+  .bot-text {
+    text-align: center;
+    font-style: italic;
+    line-height: 1.5;
+    font-size: 0.82rem;
+    color: #fff;
+  }
+
+  .bot-text strong {
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
   }
 
   .scene .bot-link {
