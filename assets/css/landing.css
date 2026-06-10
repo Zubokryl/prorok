@@ -865,7 +865,7 @@ body {
 
   .landing-bot-box {
     position: fixed;
-    left: 3rem;
+    left: -7rem;
     top: 50%;
     transform: translateY(-50%);
     width: auto;
@@ -873,6 +873,112 @@ body {
     margin: 0;
     z-index: 20;
   }
+
+  .landing-bot-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(10, 12, 18, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-decoration: none;
+  }
+
+  .landing-bot-link:hover .landing-bot-avatar {
+    filter: brightness(0) invert(1)
+      drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
+      drop-shadow(0 0 22px rgba(220, 220, 255, 0.4))
+      drop-shadow(0 0 50px rgba(200, 200, 255, 0.25));
+  }
+
+  .landing-bot-avatar {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+  }
+
+  .landing-bot-text {
+    position: absolute;
+    left: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-8px);
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(10, 12, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 30;
+    font-style: italic;
+    line-height: 1.5;
+    width: 220px;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      visibility 0s linear 0.5s;
+    pointer-events: none;
+  }
+
+  .landing-bot-text strong {
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.82rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .landing-bot-box:hover .landing-bot-text,
+  .landing-bot-link:focus .landing-bot-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      visibility 0s linear 0s;
+  }
+}
+
+/* Large desktop: 1200px+ */
+@media (min-width: 1200px) {
+  .hero-title {
+    max-width: 1000px;
+  }
+
+  .hero-title .line {
+    font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  }
+
+  .glass-wrap {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .landing-bot-box {
+    left: -7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: none;
+    margin: 0;
+    z-index: 20;
+  }
+
+  .symbols {
+    right: 80px;
+    gap: 40px;
+  }
+}
 
   .landing-bot-link {
     width: 48px;
