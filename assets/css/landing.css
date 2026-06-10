@@ -459,6 +459,11 @@ body {
     padding: 0;
     text-align: center;
     color: #fff;
+    gap: 0;
+    flex-direction: column;
+    align-items: center;
+    transform: none;
+    transition: none;
   }
 
   .landing-bot-link:hover,
@@ -471,8 +476,8 @@ body {
   }
 
   .landing-bot-avatar {
-    width: 68px;
-    height: 68px;
+    width: 128px;
+    height: 128px;
     filter: brightness(0) invert(1);
     display: block;
     margin: 0 auto;
@@ -483,6 +488,7 @@ body {
     text-align: center;
     font-style: italic;
     font-size: 0.82rem;
+    line-height: 1.5;
     color: #fff;
     background: transparent;
     backdrop-filter: none;
