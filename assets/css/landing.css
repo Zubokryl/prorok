@@ -449,7 +449,7 @@ body {
   }
 
   .landing-bot-link {
-    display: block;
+    display: flex;
     background: transparent;
     border: none;
     border-radius: 0;
@@ -476,8 +476,8 @@ body {
   }
 
   .landing-bot-avatar {
-    width: 128px;
-    height: 128px;
+    width: 160px;
+    height: 160px;
     filter: brightness(0) invert(1);
     display: block;
     margin: 0 auto;
