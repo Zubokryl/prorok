@@ -51,14 +51,15 @@ main.scene {
 }
 
 .bg-img {
-  width: 102%;
-  height: 102%;
+  width: 108%;
+  height: 108%;
   object-fit: cover;
   object-position: center;
   position: absolute;
-  top: -1%;
-  left: -1%;
+  top: -4%;
+  left: -4%;
   filter: brightness(0.7) saturate(0.9);
+  will-change: transform;
 }
 
 .vignette {
