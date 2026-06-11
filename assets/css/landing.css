@@ -215,7 +215,9 @@ main.scene {
 
 .glass p {
   font-family: var(--font-body);
+  /* увеличиваем размер текста на мобайле примерно в 1.5 раза (см. media ниже) */
   font-size: clamp(0.85rem, 2.5vw, 1rem);
+
   font-weight: 300;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
@@ -223,6 +225,7 @@ main.scene {
   margin: 0;
   text-align: center;
 }
+
 
 /* Religious Symbols — centered below glass on mobile, right side vertical on desktop */
 .symbols {
@@ -450,7 +453,9 @@ main.scene {
 
   .glass {
     padding: 0.7rem 0.85rem;
+    /* увеличение визуального размера текста в glass-морфизме на мобайле */
   }
+
 
   .glass p {
     font-size: clamp(0.74rem, 3.2vw, 0.84rem);
@@ -500,8 +505,9 @@ main.scene {
     filter: brightness(0) invert(1);
     display: block;
 
-    /* Поднять иконку ближе к блоку, чтобы книга не уезжала вниз */
-    margin: -0.15rem auto 0;
+  /* Чуть опускаем книгу вниз на мобайле, как просили */
+    margin: -0.02rem auto 0;
+
   }
 
 
