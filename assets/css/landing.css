@@ -468,7 +468,7 @@ main.scene {
     align-items: center;
     width: 92%;
     max-width: 92%;
-    margin: 0.25rem auto 0;
+    margin: -0.5rem auto 0;
     flex-shrink: 0;
 
     /* запас под текстом, чтобы он не обрезался снизу на любых моб. высотах >= 300px */
