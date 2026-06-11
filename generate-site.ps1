@@ -54,6 +54,26 @@ $botBox = @"
         </div>
 "@
 
+$landingBotBox = @"
+        <div class="landing-bot-box">
+            <a href="https://t.me/SprosiProroka_bot"
+               class="landing-bot-link js-telegram-cta"
+               data-cta="article-inline"
+               data-section="bottom"
+               aria-label="Открыть бота Спроси Пророка в Telegram">
+                <img src="/prorok/assets/images/book.png"
+                     alt="Библейский бот"
+                     class="landing-bot-avatar"
+                     width="64" height="64"
+                     loading="eager" decoding="async">
+            </a>
+            <p class="landing-bot-text">
+                <strong>Бот в Telegram</strong>
+                что говорят пророки о вашей ситуации. Поиск по Священным Текстам
+            </p>
+        </div>
+"@
+
 function Convert-MarkdownToHtml {
     param([string]$md)
     $lines = $md -split "`n"
@@ -377,7 +397,7 @@ $indexTemplatePath = Join-Path $templatesDir "landing.html"
 $indexTemplate = Get-Content $indexTemplatePath -Raw -Encoding UTF8
 
 $indexHtml = $indexTemplate -replace '\{\{GA_TAG\}\}', $gaTag `
-                          -replace '\{\{BOT_BOX\}\}', $botBox `
+                          -replace '\{\{BOT_BOX\}\}', $landingBotBox `
                           -replace '\{\{YEAR\}\}', $script:year
 
 [System.IO.File]::WriteAllText((Join-Path $outputDir $indexSlug), $indexHtml, [System.Text.UTF8Encoding]::new($false))
