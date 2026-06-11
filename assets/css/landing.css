@@ -549,13 +549,6 @@ main.scene {
     margin-bottom: 2px;
   }
 
-  .landing-bot-text strong {
-    font-style: normal;
-    color: #fff;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 2px;
-  }
 }
 
 /* Short mobile screens — keep bot text visible */
@@ -579,9 +572,9 @@ main.scene {
   }
 
   .landing-bot-text {
-    margin-top: 0.3rem;
+    margin-top: 0.1rem;
     font-size: clamp(0.68rem, 3vw, 0.78rem);
-    line-height: 1.4;
+    line-height: 1.6;
 
     /* подстраховка на коротких экранах */
     max-width: 17.8rem;
