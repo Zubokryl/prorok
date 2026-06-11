@@ -373,8 +373,8 @@ body {
     gap: 12px;
   }
   .landing-bot-avatar {
-    width: 56px;
-    height: 56px;
+    width: 112px;
+    height: 112px;
   }
 }
 
@@ -476,8 +476,8 @@ body {
   }
 
   .landing-bot-avatar {
-    width: 256px;
-    height: 256px;
+    width: 512px;
+    height: 512px;
     filter: brightness(0) invert(1);
     display: block;
     margin: 0 auto;
@@ -576,8 +576,8 @@ body {
   }
 
   .landing-bot-avatar {
-    width: 58px;
-    height: 58px;
+    width: 116px;
+    height: 116px;
     flex-shrink: 0;
     object-fit: contain;
     filter: brightness(0) invert(1);
@@ -814,8 +814,8 @@ body {
   }
 
   .landing-bot-avatar {
-    width: 58px;
-    height: 58px;
+    width: 116px;
+    height: 116px;
     flex-shrink: 0;
     object-fit: contain;
     filter: brightness(0) invert(1);
