@@ -17,12 +17,14 @@ $lines = Get-Content $csvPath -Encoding UTF8
 $urls = @()
 
 foreach ($line in $lines) {
-    if ($line -match '^\s*$' -or $line -match '^@" | "^"@ | ^"@ | @\| ') { continue }
+    if ($line -match '^\s*$') { continue }
     if ($line -match '^file,') { continue }
-    if ($line -match '^[a-z0-9_\-]+\.html,') {
-        $parts = $line -split ','
-        $slug = $parts[0].Trim('"')
-        $urls += "$baseUrl/$slug"
+    $parts = $line -split ','
+    if ($parts.Count -ge 2) {
+        $slug = $parts[0].Trim().Trim('"')
+        if ($slug -match '^[a-zA-Z0-9_\-]+\.html$') {
+            $urls += "$baseUrl/$slug"
+        }
     }
 }
 

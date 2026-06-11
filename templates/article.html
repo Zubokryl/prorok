@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}} — Пророк</title>
     <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="{{CANONICAL}}">
     <link rel="stylesheet" href="/prorok/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,30 +16,44 @@
     <meta property="og:description" content="{{DESCRIPTION}}">
     <meta property="og:url" content="{{CANONICAL}}">
     <meta property="og:image" content="https://prorok.site/prorok/assets/images/default.jpg">
+    <meta property="og:site_name" content="Пророк">
+    <meta property="og:locale" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{TITLE}}">
     <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="author" content="Пророк">
+    {{BREADCRUMB_SCHEMA}}
+    {{ARTICLE_SCHEMA}}
+    {{FAQ_SCHEMA}}
     {{GA_TAG}}
 </head>
 <body>
     <header>
-        <h1>Пророк</h1>
+        <a href="/prorok/index.html" style="text-decoration:none;color:inherit;">
+            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:700;">Пророк</span>
+        </a>
+        <div class="site-search" style="margin-top:8px;">
+            <input id="search-input" type="search" placeholder="Поиск по статьям..."
+                   aria-label="Поиск" autocomplete="off"
+                   style="width:100%;max-width:320px;padding:6px 12px;border:1px solid #333;border-radius:8px;background:#111;color:#eee;font-size:0.9rem;">
+            <div id="search-results" style="display:none;position:absolute;z-index:100;background:#111;border:1px solid #333;border-radius:8px;max-width:400px;max-height:400px;overflow-y:auto;margin-top:4px;"></div>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="{{BACK_LINK}}">← Назад</a></li>
-        </ul>
+    <nav aria-label="Breadcrumb">
+        {{BREADCRUMB_HTML}}
     </nav>
     <main>
         <article>
-            <h2>{{TITLE}}</h2>
+            <h1>{{TITLE}}</h1>
             {{CONTENT}}
         </article>
+        {{RELATED_LINKS}}
         {{BOT_BOX}}
     </main>
     <footer>
         <p>&copy; {{YEAR}} Пророк. Все права защищены.</p>
     </footer>
     <script src="/prorok/assets/js/main.js"></script>
+    <script src="/prorok/assets/js/search.js"></script>
 </body>
 </html>

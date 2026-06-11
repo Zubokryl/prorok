@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prorok.site/prorok/sitemap.xml
