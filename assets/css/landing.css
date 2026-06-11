@@ -735,63 +735,63 @@ main.scene {
       drop-shadow(0 0 50px rgba(200, 200, 255, 0.25));
   }
 
-  .landing-bot-avatar {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    object-fit: contain;
+.landing-bot-avatar {
+    width: clamp(104px, 34vw, 128px);
+    height: clamp(104px, 34vw, 128px);
     filter: brightness(0) invert(1);
-    transition: filter 0.6s ease;
+    display: block;
+
+    /* Опустить книгу и текст о боте на мобайле на ~5rem вниз */
+    margin: 0.02rem auto 0;
+    position: relative;
+    top: 0;
+    transform: scale(0.78);
+
   }
 
   .landing-bot-text {
-    position: absolute;
-    left: calc(100% + 14px);
-    top: 50%;
-    transform: translateY(-50%) translateX(-8px);
-    opacity: 0;
-    visibility: hidden;
-    background: rgba(10, 12, 18, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    padding: 14px 18px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    z-index: 30;
+    display: block;
+    /* меньше отступа, чтобы текст гарантированно помещался целиком */
+    margin: 0.35rem 0 0;
+    opacity: 1;
+    visibility: visible;
+
+    /* страховка от обрезки на экранах 300-480px по высоте */
+    max-width: 18.5rem;
+    overflow-wrap: anywhere;
+
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 0 0.25rem;
+
+    text-align: center;
     font-style: italic;
-    line-height: 1.5;
-    width: 220px;
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease,
-      visibility 0s linear 0.5s;
+    font-size: clamp(0.72rem, 3.3vw, 0.85rem);
+    line-height: 1.45;
+    color: #fff;
+    background: none;
+    box-shadow: none;
     pointer-events: none;
+    cursor: default;
+    user-select: none;
+    overflow-wrap: anywhere;
   }
 
   .landing-bot-text strong {
     font-style: normal;
     color: #fff;
     font-weight: 700;
-    font-size: 0.82rem;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
-  .landing-bot-box:hover .landing-bot-text,
-  .landing-bot-link:focus .landing-bot-text {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease,
-      visibility 0s linear 0s;
-  }
-}
-
-/* Large desktop: 1200px+ */
-@media (min-width: 1200px) {
-  .hero-title {
-    max-width: 1000px;
+  .landing-bot-text strong {
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
   }
 
   .hero-title .line {
