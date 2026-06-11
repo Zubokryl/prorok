@@ -462,14 +462,18 @@ main.scene {
     line-height: 1.5;
   }
 
-  .landing-bot-box {
+  .scene .landing-bot-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 92%;
     max-width: 92%;
-    margin: -0.5rem auto 0;
+    margin: 1rem auto 0;
     flex-shrink: 0;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
 
     /* запас под текстом, чтобы он не обрезался снизу на любых моб. высотах >= 300px */
     padding-bottom: 0.55rem;
@@ -504,10 +508,10 @@ main.scene {
     filter: brightness(0) invert(1);
     display: block;
 
-    /* Опустить книгу и текст о боте на мобайле на ~5rem вниз */
-    margin: 0.02rem auto 0;
+    /* Опустить книгу и текст о боте на мобайле */
+    margin: 0.5rem auto 0;
     position: relative;
-    top: -5rem;
+    top: 0;
     transform: scale(0.78);
 
   }
