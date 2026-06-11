@@ -462,7 +462,6 @@ main.scene {
     line-height: 1.5;
   }
 
-
   .landing-bot-box {
     display: flex;
     flex-direction: column;
@@ -476,7 +475,6 @@ main.scene {
     padding-bottom: 0.55rem;
     box-sizing: border-box;
   }
-
 
   .landing-bot-link {
     display: block;
@@ -509,16 +507,10 @@ main.scene {
     /* Опустить книгу и текст о боте на мобайле на ~5rem вниз */
     margin: 0.02rem auto 0;
     position: relative;
-    top: 6rem;
+    top: 0;
     transform: scale(0.78);
 
-
-
   }
-
-
-
-
 
   .landing-bot-text {
     display: block;
@@ -547,6 +539,14 @@ main.scene {
     cursor: default;
     user-select: none;
     overflow-wrap: anywhere;
+  }
+
+  .landing-bot-text strong {
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
   }
 
   .landing-bot-text strong {
