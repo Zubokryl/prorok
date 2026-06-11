@@ -60,6 +60,7 @@ main.scene {
   left: -4%;
   filter: brightness(0.7) saturate(0.9);
   will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .vignette {
