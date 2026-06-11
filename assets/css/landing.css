@@ -509,7 +509,7 @@ main.scene {
     /* Опустить книгу и текст о боте на мобайле на ~5rem вниз */
     margin: 0.02rem auto 0;
     position: relative;
-    top: 4rem;
+    top: 5rem;
     transform: scale(0.8);
 
   }
