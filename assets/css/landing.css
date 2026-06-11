@@ -456,11 +456,12 @@ main.scene {
     /* увеличение визуального размера текста в glass-морфизме на мобайле */
   }
 
-
   .glass p {
-    font-size: clamp(0.74rem, 3.2vw, 0.84rem);
+    /* увеличиваем в ~1.5 раза на мобильных */
+    font-size: clamp(1.05rem, 3.8vw, 1.25rem);
     line-height: 1.5;
   }
+
 
   .landing-bot-box {
     display: flex;
@@ -505,10 +506,10 @@ main.scene {
     filter: brightness(0) invert(1);
     display: block;
 
-  /* Чуть опускаем книгу вниз на мобайле, как просили */
-    margin: -0.02rem auto 0;
-
+    /* Чуть опускаем книгу вниз на мобайле, как просили */
+    margin: 0.02rem auto 0;
   }
+
 
 
   .landing-bot-text {
