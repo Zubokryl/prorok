@@ -506,9 +506,12 @@ main.scene {
     filter: brightness(0) invert(1);
     display: block;
 
-    /* Чуть опускаем книгу вниз на мобайле, как просили */
+    /* Опустить книгу и текст о боте на мобайле на ~5rem вниз */
     margin: 0.02rem auto 0;
+    position: relative;
+    top: 5rem;
   }
+
 
 
 
