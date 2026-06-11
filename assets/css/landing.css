@@ -463,10 +463,14 @@ main.scene {
     align-items: center;
     width: 92%;
     max-width: 92%;
-    margin: 0.35rem auto 0;
+    margin: 0.25rem auto 0;
     flex-shrink: 0;
-    padding-bottom: 0.25rem;
+
+    /* запас под текстом, чтобы он не обрезался снизу на любых моб. высотах >= 300px */
+    padding-bottom: 0.55rem;
+    box-sizing: border-box;
   }
+
 
   .landing-bot-link {
     display: block;
@@ -495,19 +499,28 @@ main.scene {
     height: clamp(104px, 34vw, 128px);
     filter: brightness(0) invert(1);
     display: block;
-    margin: 0 auto;
+
+    /* Поднять иконку ближе к блоку, чтобы книга не уезжала вниз */
+    margin: -0.15rem auto 0;
   }
+
 
   .landing-bot-text {
     display: block;
-    margin: 0.45rem 0 0;
+    /* меньше отступа, чтобы текст гарантированно помещался целиком */
+    margin: 0.35rem 0 0;
     opacity: 1;
     visibility: visible;
+
+    /* страховка от обрезки на экранах 300-480px по высоте */
+    max-width: 18.5rem;
+    overflow-wrap: anywhere;
+
     position: static;
     transform: none;
     width: 100%;
-    max-width: 18.5rem;
     padding: 0 0.25rem;
+
     text-align: center;
     font-style: italic;
     font-size: clamp(0.72rem, 3.3vw, 0.82rem);
@@ -551,10 +564,14 @@ main.scene {
   }
 
   .landing-bot-text {
-    margin-top: 0.35rem;
+    margin-top: 0.3rem;
     font-size: clamp(0.68rem, 3vw, 0.78rem);
     line-height: 1.4;
+
+    /* подстраховка на коротких экранах */
+    max-width: 17.8rem;
   }
+
 }
 
 /* Tablets: 481-768px */
