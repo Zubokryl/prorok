@@ -597,8 +597,8 @@ main.scene {
 
 }
 
-/* Tablets: 481-768px */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablets: 481-930px */
+@media (min-width: 481px) and (max-width: 930px) {
   .scene {
     justify-content: flex-start;
     padding-top: 2.5rem;
@@ -675,8 +675,8 @@ main.scene {
   }
 }
 
-/* Desktop: 769px+ */
-@media (min-width: 769px) {
+/* Desktop: 931px+ */
+@media (min-width: 931px) {
   .scene {
     justify-content: center;
     overflow-y: hidden;
