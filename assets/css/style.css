@@ -436,12 +436,45 @@ body.bg-judaism .topic-card:hover {
     body.bg-judaism {
         background-attachment: scroll;
     }
-    .religion-page-title h2 {
-        font-size: 2rem;
-    }
-    .religion-page-title p {
-        font-size: 1rem;
-    }
+}
+
+/* Bot link section */
+.bot-link-section {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2.5rem 1rem 3rem;
+}
+
+.bot-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: all 0.35s ease;
+}
+
+.bot-link svg {
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.bot-link:hover {
+    background: rgba(255,255,255,0.22);
+    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
 /* Responsive Design */
