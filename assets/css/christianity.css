@@ -1,0 +1,244 @@
+/* ============================================
+   CHRISTIANITY SECTION STYLES
+   ============================================ */
+
+/* Base Section Styles */
+.christianity-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(24, 24, 24, 0.9) 0%, rgba(12, 12, 12, 0.9) 100%);
+  color: #f4ecdc;
+  overflow-x: hidden;
+}
+
+/* Section Title */
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.section-title h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #d4c5a0;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.section-title p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(244, 236, 220, 0.85);
+  max-width: 800px;
+  margin: 1rem auto 0;
+  line-height: 1.6;
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.card h2 {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: #d4c5a0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #d4c5a0, rgba(212, 197, 160, 0.3));
+}
+
+.card p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  color: rgba(244, 236, 220, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.card .read-more {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(212, 197, 160, 0.15);
+  color: #d4c5a0;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.card .read-more:hover {
+  background: rgba(212, 197, 160, 0.25);
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .christianity-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .section-title p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .card h2 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+
+  .card p {
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  }
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.christianity-section {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.card {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.card:nth-child(1) { --i: 1; }
+.card:nth-child(2) { --i: 2; }
+.card:nth-child(3) { --i: 3; }
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(212, 197, 160, 0.3);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  background: #d4c5a0;
+  border-radius: 2px;
+  margin-top: 6px;
+  animation: scrollArrow 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes scrollArrow {
+  0% { opacity: 0; transform: translateY(5px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(15px); }
+}
