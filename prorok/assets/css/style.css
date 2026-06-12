@@ -349,6 +349,9 @@ body.bg-judaism {
 
 body.bg-christianity {
     background-image: url('/prorok/assets/images/christ.png');
+    background-size: contain;
+    background-position: center top;
+    background-color: #f5ede4;
 }
 
 body.bg-islam {
@@ -360,7 +363,6 @@ body.bg-judaism {
 }
 
 /* Dark overlay layer */
-body.bg-christianity::before,
 body.bg-islam::before,
 body.bg-judaism::before {
     content: '';
@@ -371,14 +373,33 @@ body.bg-judaism::before {
     pointer-events: none;
 }
 
-body.bg-christianity > *,
+/* Light overlay for Christianity */
+body.bg-christianity::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 0;
+    pointer-events: none;
+}
+
 body.bg-islam > *,
 body.bg-judaism > * {
     position: relative;
     z-index: 1;
 }
 
-body.bg-christianity main,
+body.bg-christianity > * {
+    position: relative;
+    z-index: 1;
+}
+
+body.bg-christianity main {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
 body.bg-islam main,
 body.bg-judaism main {
     background: rgba(255, 255, 255, 0.82);
