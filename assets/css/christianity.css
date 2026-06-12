@@ -10,7 +10,7 @@
   --text-light: #eae4d8;
   --text-muted: #bbb;
   --text-dark-brown: #2e241c;
-  
+
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-script: 'Caveat', cursive;
   --font-sans: 'Inter', sans-serif;
@@ -101,8 +101,8 @@ body.bg-christianity-custom::before {
   border-radius: 8px;
   text-decoration: none;
   box-sizing: border-box;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              border-color 0.4s ease, 
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.4s ease,
               box-shadow 0.4s ease;
   overflow: hidden;
 }
@@ -178,7 +178,7 @@ body.bg-christianity-custom::before {
 
 /* Category-specific Card Styling */
 .card-family {
-  background: linear-gradient(to bottom, rgba(234, 228, 216, 0.96) 0%, rgba(226, 219, 205, 0.98) 100%), 
+  background: linear-gradient(to bottom, rgba(234, 228, 216, 0.96) 0%, rgba(226, 219, 205, 0.98) 100%),
               url("/prorok/assets/images/christ.png");
   background-size: cover;
   background-position: center;
@@ -202,7 +202,7 @@ body.bg-christianity-custom::before {
 }
 
 .card-forgiveness {
-  background: linear-gradient(to bottom, rgba(20, 19, 18, 0.8) 0%, rgba(20, 19, 18, 0.88) 100%), 
+  background: linear-gradient(to bottom, rgba(20, 19, 18, 0.8) 0%, rgba(20, 19, 18, 0.88) 100%),
               url("/prorok/assets/images/christ1.png");
   background-size: cover;
   background-position: center;
@@ -246,13 +246,12 @@ body.bg-christianity-custom::before {
   color: var(--text-muted);
 }
 
-
 /* 2. Editor's Notebook Section */
 .editor-notebook-section {
   position: relative;
   margin-bottom: 6rem;
   padding: 6.5rem 5rem;
-  background: linear-gradient(to right, rgba(20, 19, 18, 0.88) 25%, rgba(20, 19, 18, 0.35) 75%), 
+  background: linear-gradient(to right, rgba(20, 19, 18, 0.88) 25%, rgba(20, 19, 18, 0.35) 75%),
               url("/prorok/assets/images/christ1.png");
   background-size: cover;
   background-position: center;
@@ -306,7 +305,6 @@ body.bg-christianity-custom::before {
   0% { transform: translateY(0px); }
   100% { transform: translateY(-8px); }
 }
-
 
 /* 3. Weekly Readings Section */
 .weekly-readings-section {
@@ -367,13 +365,14 @@ body.bg-christianity-custom::before {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: var(--text-light);
+  color: #000000;
   box-sizing: border-box;
   transition: transform 0.3s ease;
 }
 
 .reading-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
 .reading-image-wrap {
@@ -391,7 +390,7 @@ body.bg-christianity-custom::before {
   height: 100%;
   object-fit: cover;
   filter: sepia(0.1) brightness(0.85);
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), 
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
               filter 0.4s ease;
 }
 
@@ -410,35 +409,57 @@ body.bg-christianity-custom::before {
 }
 
 .reading-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-family: "Times New Roman";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0px;
+  color: #000000;
   margin: 0 0 0.8rem 0;
-  color: #fff;
   transition: color 0.3s ease;
 }
 
 .reading-card:hover .reading-card-title {
-  color: var(--accent-gold-hover);
+  color: #000000;
 }
 
 .reading-card-desc {
-  font-family: var(--font-serif);
-  font-size: 1.08rem;
-  line-height: 1.55;
-  color: var(--text-muted);
+  font-family: "Times New Roman";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: #000000;
   margin: 0 0 1.5rem 0;
   flex-grow: 1;
 }
 
 .reading-author {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #7a7a7a;
+  display: none;
 }
 
+.reading-card-desc::after {
+  content: "читать";
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  color: #000000;
+  text-decoration: underline;
+  border-radius: 0px;
+  border-width: 0px;
+  border-style: none;
+  font-size: 16px;
+  font-weight: 400;
+  min-width: 0px;
+  min-height: 0px;
+  text-decoration: underline;
+  box-shadow: none;
+  background-color: transparent;
+  border-color: transparent;
+  font-family: "Times New Roman";
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
 
 /* 4. Articles Catalog Section */
 .catalog-section {
@@ -486,8 +507,8 @@ body.bg-christianity-custom::before {
   border-radius: 6px;
   text-decoration: none;
   box-sizing: border-box;
-  transition: border-color 0.3s ease, 
-              background-color 0.3s ease, 
+  transition: border-color 0.3s ease,
+              background-color 0.3s ease,
               transform 0.3s ease;
 }
 
@@ -519,7 +540,6 @@ body.bg-christianity-custom::before {
   line-height: 1.4;
 }
 
-
 /* Bottom Telegram Box adjustments */
 .bot-link-section {
   position: relative;
@@ -540,7 +560,6 @@ body.bg-christianity-custom::before {
   color: #fff !important;
 }
 
-
 /* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
@@ -549,20 +568,20 @@ body.bg-christianity-custom::before {
   .topics-grid {
     gap: 1.5rem;
   }
-  
+
   .nav-card {
     height: 420px;
     padding: 2.5rem 1.8rem 2rem;
   }
-  
+
   .card-title {
     font-size: 2.8rem;
   }
-  
+
   .readings-grid {
     gap: 1.5rem;
   }
-  
+
   .reading-card-title {
     font-size: 1.5rem;
   }
@@ -572,44 +591,44 @@ body.bg-christianity-custom::before {
   body.bg-christianity-custom {
     font-size: 17px;
   }
-  
+
   .christianity-container {
     padding: 2.5rem 1.2rem;
   }
-  
+
   /* Topics Nav */
   .topics-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .nav-card {
     height: auto;
     min-height: 280px;
     padding: 2.5rem 2rem;
   }
-  
+
   .card-desc {
     margin-top: 1.5rem;
   }
-  
+
   /* Editor Notebook Banner */
   .editor-notebook-section {
     padding: 3rem 1.5rem;
-    background-image: linear-gradient(to bottom, rgba(20, 19, 18, 0.9) 0%, rgba(20, 19, 18, 0.95) 100%), 
+    background-image: linear-gradient(to bottom, rgba(20, 19, 18, 0.9) 0%, rgba(20, 19, 18, 0.95) 100%),
                       url("/prorok/assets/images/christ1.png");
   }
-  
+
   .notebook-card {
     max-width: 100%;
     padding: 2.5rem 1.8rem;
     animation: none;
   }
-  
+
   .notebook-quote {
     font-size: 2.1rem;
   }
-  
+
   /* Weekly readings header & grid */
   .section-header {
     flex-direction: column;
@@ -617,40 +636,40 @@ body.bg-christianity-custom::before {
     gap: 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .weekly-title {
     font-size: 1.9rem;
   }
-  
+
   .weekly-title .script-word {
     font-size: 2.4rem;
   }
-  
+
   .readings-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .reading-card {
     max-width: 450px;
     margin: 0 auto;
   }
-  
+
   /* Catalog */
   .catalog-section {
     margin-top: 5rem;
   }
-  
+
   .catalog-title {
     font-size: 2rem;
     margin-bottom: 3rem;
   }
-  
+
   .catalog-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .catalog-item {
     padding: 1.4rem;
   }
