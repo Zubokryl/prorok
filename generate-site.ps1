@@ -22,6 +22,16 @@ if (-not (Test-Path $articlesDir)) {
 
 New-Item -Path $outputDir -ItemType Directory -Force | Out-Null
 
+# Copy assets (CSS, JS, images) into output folder
+$assetsSrc = Join-Path $root "assets"
+$assetsDst = Join-Path $outputDir "assets"
+if (Test-Path $assetsSrc) {
+    Copy-Item -Path $assetsSrc -Destination $assetsDst -Recurse -Force
+}
+
+# Create .nojekyll to prevent Jekyll processing on GitHub Pages
+[System.IO.File]::WriteAllText((Join-Path $outputDir ".nojekyll"), "", [System.Text.UTF8Encoding]::new($false))
+
 $gaTag = @"
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2LRQM94EG"></script>
