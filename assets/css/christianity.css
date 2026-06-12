@@ -113,34 +113,6 @@ body.bg-christianity-custom::before {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Decorative Flourish */
-.card-flourish {
-  width: 48px;
-  margin-bottom: 1.2rem;
-  opacity: 0.55;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.card-flourish svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.nav-card:hover .card-flourish {
-  opacity: 0.85;
-  transform: scale(1.08);
-}
-
-/* Card Number */
-.card-number {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  margin-bottom: 2rem;
-}
-
 /* Card Title */
 .card-title {
   font-family: var(--font-script);
@@ -193,17 +165,9 @@ body.bg-christianity-custom::before {
 /* Category-specific Card Styling */
 .card-family {
   background: linear-gradient(to bottom, rgba(234, 228, 216, 0.96) 0%, rgba(226, 219, 205, 0.98) 100%),
-              url("/prorok/assets/images/christ.png");
+              var(--card-bg-image, url("/prorok/assets/images/christ.png"));
   background-size: cover;
   background-position: center;
-}
-
-.card-family .card-flourish {
-  color: #8c6a47;
-}
-
-.card-family .card-number {
-  color: #8c6a47;
 }
 
 .card-family .card-title {
@@ -219,22 +183,14 @@ body.bg-christianity-custom::before {
 }
 
 .card-family .card-read-link {
-  color: #8c6a47;
+  color: #5c4b3e;
 }
 
 .card-forgiveness {
   background: linear-gradient(to bottom, rgba(20, 19, 18, 0.8) 0%, rgba(20, 19, 18, 0.88) 100%),
-              url("/prorok/assets/images/christ1.png");
+              var(--card-bg-image, url("/prorok/assets/images/christ1.png"));
   background-size: cover;
   background-position: center;
-}
-
-.card-forgiveness .card-flourish {
-  color: var(--accent-gold);
-}
-
-.card-forgiveness .card-number {
-  color: var(--accent-gold);
 }
 
 .card-forgiveness .card-title {
@@ -250,19 +206,14 @@ body.bg-christianity-custom::before {
 }
 
 .card-forgiveness .card-read-link {
-  color: var(--accent-gold);
+  color: var(--text-muted);
 }
 
 .card-money-work {
-  background: linear-gradient(135deg, #28221c 0%, #121110 100%);
-}
-
-.card-money-work .card-flourish {
-  color: var(--accent-gold);
-}
-
-.card-money-work .card-number {
-  color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(40, 34, 28, 0.92) 0%, rgba(18, 17, 16, 0.95) 100%),
+              var(--card-bg-image, none);
+  background-size: cover;
+  background-position: center;
 }
 
 .card-money-work .card-title {
@@ -278,7 +229,7 @@ body.bg-christianity-custom::before {
 }
 
 .card-money-work .card-read-link {
-  color: var(--accent-gold);
+  color: var(--text-muted);
 }
 
 /* 2. Editor's Notebook Section */
