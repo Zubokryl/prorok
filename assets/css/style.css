@@ -348,7 +348,7 @@ body.bg-judaism {
 }
 
 body.bg-christianity {
-    background-image: url('/prorok/assets/images/christ.png');
+    background-image: url("/prorok/assets/images/christ%20(2).png");
     background-size: contain;
     background-position: center top;
     background-color: #f5ede4;
@@ -395,9 +395,10 @@ body.bg-christianity > * {
 }
 
 body.bg-christianity main {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
 }
 
 body.bg-islam main,
