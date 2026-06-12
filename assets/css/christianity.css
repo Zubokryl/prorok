@@ -13,8 +13,8 @@
   justify-content: center;
   padding: 2rem 1rem;
   box-sizing: border-box;
-  background: linear-gradient(135deg, rgba(24, 24, 24, 0.9) 0%, rgba(12, 12, 12, 0.9) 100%);
-  color: #f4ecdc;
+  background: linear-gradient(135deg, rgba(243, 234, 219, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+  color: #000000;
   overflow-x: hidden;
 }
 
@@ -28,19 +28,24 @@
 }
 
 .section-title h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-family: "Times New Roman";
+  font-size: 32px;
   font-weight: 700;
-  color: #d4c5a0;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  line-height: 38px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-shadow: none;
   margin: 0;
   line-height: 1.1;
 }
 
 .section-title p {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  font-weight: 300;
-  color: rgba(244, 236, 220, 0.85);
+  font-family: "Times New Roman";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: #000000;
   max-width: 800px;
   margin: 1rem auto 0;
   line-height: 1.6;
@@ -58,12 +63,14 @@
 
 /* Card Styles */
 .card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  background: #ffffff;
+  border-color: #e5e7eb;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  box-shadow: none;
+  text-color: #000000;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -88,9 +95,12 @@
 }
 
 .card h2 {
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  color: #d4c5a0;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #000000;
   margin-top: 0;
   margin-bottom: 1rem;
   position: relative;
@@ -108,22 +118,33 @@
 }
 
 .card p {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  line-height: 1.6;
-  color: rgba(244, 236, 220, 0.9);
+  font-family: "Times New Roman";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: #000000;
   margin-bottom: 1.5rem;
 }
 
 .card .read-more {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background: rgba(212, 197, 160, 0.15);
-  color: #d4c5a0;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  padding: 8px 16px;
+  background: transparent;
+  color: #000000;
+  text-decoration: underline;
+  border-radius: 0px;
+  border-width: 0px;
+  border-style: none;
+  font-size: 16px;
+  font-weight: 400;
+  min-width: 0px;
+  min-height: 0px;
+  text-decoration: underline;
+  box-shadow: none;
+  background-color: transparent;
+  border-color: transparent;
+  font-family: "Times New Roman";
   transition: background 0.3s ease;
 }
 
@@ -208,17 +229,7 @@
 
 /* Scroll Indicator */
 .scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 50px;
-  border: 2px solid rgba(212, 197, 160, 0.3);
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  animation: bounce 2s infinite;
+  display: none;
 }
 
 .scroll-indicator::after {
