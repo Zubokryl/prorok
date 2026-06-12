@@ -26,7 +26,10 @@ New-Item -Path $outputDir -ItemType Directory -Force | Out-Null
 $assetsSrc = Join-Path $root "assets"
 $assetsDst = Join-Path $outputDir "assets"
 if (Test-Path $assetsSrc) {
-    Copy-Item -Path $assetsSrc -Destination $assetsDst -Recurse -Force
+    if (-not (Test-Path $assetsDst)) {
+        New-Item -Path $assetsDst -ItemType Directory -Force | Out-Null
+    }
+    Copy-Item -Path "$assetsSrc\*" -Destination $assetsDst -Recurse -Force
 }
 
 # Create .nojekyll to prevent Jekyll processing on GitHub Pages
