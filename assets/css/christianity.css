@@ -113,23 +113,23 @@ body.bg-christianity-custom::before {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Bracket Corner Marks */
-.card-bracket {
-  position: absolute;
-  top: 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 1.3rem;
-  font-weight: 300;
-  line-height: 1;
-  pointer-events: none;
+/* Decorative Flourish */
+.card-flourish {
+  width: 48px;
+  margin-bottom: 1.2rem;
+  opacity: 0.55;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.left-bracket {
-  left: 1.5rem;
+.card-flourish svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.right-bracket {
-  left: 2.3rem;
+.nav-card:hover .card-flourish {
+  opacity: 0.85;
+  transform: scale(1.08);
 }
 
 /* Card Number */
@@ -139,7 +139,6 @@ body.bg-christianity-custom::before {
   font-weight: 500;
   letter-spacing: 0.18em;
   margin-bottom: 2rem;
-  margin-left: 2rem; /* Align past the bracket markers */
 }
 
 /* Card Title */
@@ -174,6 +173,21 @@ body.bg-christianity-custom::before {
   font-size: 1.15rem;
   line-height: 1.5;
   margin-top: auto; /* Push to bottom */
+  margin-bottom: 1.5rem;
+}
+
+/* Card Read Link */
+.card-read-link {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-card:hover .card-read-link {
+  transform: translateX(5px);
 }
 
 /* Category-specific Card Styling */
@@ -184,7 +198,10 @@ body.bg-christianity-custom::before {
   background-position: center;
 }
 
-.card-family .card-bracket,
+.card-family .card-flourish {
+  color: #8c6a47;
+}
+
 .card-family .card-number {
   color: #8c6a47;
 }
@@ -201,6 +218,10 @@ body.bg-christianity-custom::before {
   color: #5c4b3e;
 }
 
+.card-family .card-read-link {
+  color: #8c6a47;
+}
+
 .card-forgiveness {
   background: linear-gradient(to bottom, rgba(20, 19, 18, 0.8) 0%, rgba(20, 19, 18, 0.88) 100%),
               url("/prorok/assets/images/christ1.png");
@@ -208,7 +229,10 @@ body.bg-christianity-custom::before {
   background-position: center;
 }
 
-.card-forgiveness .card-bracket,
+.card-forgiveness .card-flourish {
+  color: var(--accent-gold);
+}
+
 .card-forgiveness .card-number {
   color: var(--accent-gold);
 }
@@ -225,11 +249,18 @@ body.bg-christianity-custom::before {
   color: var(--text-muted);
 }
 
+.card-forgiveness .card-read-link {
+  color: var(--accent-gold);
+}
+
 .card-money-work {
   background: linear-gradient(135deg, #28221c 0%, #121110 100%);
 }
 
-.card-money-work .card-bracket,
+.card-money-work .card-flourish {
+  color: var(--accent-gold);
+}
+
 .card-money-work .card-number {
   color: var(--accent-gold);
 }
@@ -244,6 +275,10 @@ body.bg-christianity-custom::before {
 
 .card-money-work .card-desc {
   color: var(--text-muted);
+}
+
+.card-money-work .card-read-link {
+  color: var(--accent-gold);
 }
 
 /* 2. Editor's Notebook Section */

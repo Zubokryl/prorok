@@ -10,7 +10,7 @@
   --text-light: #eae4d8;
   --text-muted: #bbb;
   --text-dark-brown: #2e241c;
-  
+
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-script: 'Caveat', cursive;
   --font-sans: 'Inter', sans-serif;
@@ -101,8 +101,8 @@ body.bg-christianity-custom::before {
   border-radius: 8px;
   text-decoration: none;
   box-sizing: border-box;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              border-color 0.4s ease, 
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.4s ease,
               box-shadow 0.4s ease;
   overflow: hidden;
 }
@@ -113,23 +113,23 @@ body.bg-christianity-custom::before {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Bracket Corner Marks */
-.card-bracket {
-  position: absolute;
-  top: 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 1.3rem;
-  font-weight: 300;
-  line-height: 1;
-  pointer-events: none;
+/* Decorative Flourish */
+.card-flourish {
+  width: 48px;
+  margin-bottom: 1.2rem;
+  opacity: 0.55;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.left-bracket {
-  left: 1.5rem;
+.card-flourish svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.right-bracket {
-  left: 2.3rem;
+.nav-card:hover .card-flourish {
+  opacity: 0.85;
+  transform: scale(1.08);
 }
 
 /* Card Number */
@@ -139,7 +139,6 @@ body.bg-christianity-custom::before {
   font-weight: 500;
   letter-spacing: 0.18em;
   margin-bottom: 2rem;
-  margin-left: 2rem; /* Align past the bracket markers */
 }
 
 /* Card Title */
@@ -174,17 +173,35 @@ body.bg-christianity-custom::before {
   font-size: 1.15rem;
   line-height: 1.5;
   margin-top: auto; /* Push to bottom */
+  margin-bottom: 1.5rem;
+}
+
+/* Card Read Link */
+.card-read-link {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-card:hover .card-read-link {
+  transform: translateX(5px);
 }
 
 /* Category-specific Card Styling */
 .card-family {
-  background: linear-gradient(to bottom, rgba(234, 228, 216, 0.96) 0%, rgba(226, 219, 205, 0.98) 100%), 
+  background: linear-gradient(to bottom, rgba(234, 228, 216, 0.96) 0%, rgba(226, 219, 205, 0.98) 100%),
               url("/prorok/assets/images/christ.png");
   background-size: cover;
   background-position: center;
 }
 
-.card-family .card-bracket,
+.card-family .card-flourish {
+  color: #8c6a47;
+}
+
 .card-family .card-number {
   color: #8c6a47;
 }
@@ -201,14 +218,21 @@ body.bg-christianity-custom::before {
   color: #5c4b3e;
 }
 
+.card-family .card-read-link {
+  color: #8c6a47;
+}
+
 .card-forgiveness {
-  background: linear-gradient(to bottom, rgba(20, 19, 18, 0.8) 0%, rgba(20, 19, 18, 0.88) 100%), 
+  background: linear-gradient(to bottom, rgba(20, 19, 18, 0.8) 0%, rgba(20, 19, 18, 0.88) 100%),
               url("/prorok/assets/images/christ1.png");
   background-size: cover;
   background-position: center;
 }
 
-.card-forgiveness .card-bracket,
+.card-forgiveness .card-flourish {
+  color: var(--accent-gold);
+}
+
 .card-forgiveness .card-number {
   color: var(--accent-gold);
 }
@@ -225,11 +249,18 @@ body.bg-christianity-custom::before {
   color: var(--text-muted);
 }
 
+.card-forgiveness .card-read-link {
+  color: var(--accent-gold);
+}
+
 .card-money-work {
   background: linear-gradient(135deg, #28221c 0%, #121110 100%);
 }
 
-.card-money-work .card-bracket,
+.card-money-work .card-flourish {
+  color: var(--accent-gold);
+}
+
 .card-money-work .card-number {
   color: var(--accent-gold);
 }
@@ -246,13 +277,16 @@ body.bg-christianity-custom::before {
   color: var(--text-muted);
 }
 
+.card-money-work .card-read-link {
+  color: var(--accent-gold);
+}
 
 /* 2. Editor's Notebook Section */
 .editor-notebook-section {
   position: relative;
   margin-bottom: 6rem;
   padding: 6.5rem 5rem;
-  background: linear-gradient(to right, rgba(20, 19, 18, 0.88) 25%, rgba(20, 19, 18, 0.35) 75%), 
+  background: linear-gradient(to right, rgba(20, 19, 18, 0.88) 25%, rgba(20, 19, 18, 0.35) 75%),
               url("/prorok/assets/images/christ1.png");
   background-size: cover;
   background-position: center;
@@ -306,7 +340,6 @@ body.bg-christianity-custom::before {
   0% { transform: translateY(0px); }
   100% { transform: translateY(-8px); }
 }
-
 
 /* 3. Weekly Readings Section */
 .weekly-readings-section {
@@ -367,13 +400,14 @@ body.bg-christianity-custom::before {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: var(--text-light);
+  color: #000000;
   box-sizing: border-box;
   transition: transform 0.3s ease;
 }
 
 .reading-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
 .reading-image-wrap {
@@ -391,7 +425,7 @@ body.bg-christianity-custom::before {
   height: 100%;
   object-fit: cover;
   filter: sepia(0.1) brightness(0.85);
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), 
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
               filter 0.4s ease;
 }
 
@@ -410,35 +444,57 @@ body.bg-christianity-custom::before {
 }
 
 .reading-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-family: "Times New Roman";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0px;
+  color: #000000;
   margin: 0 0 0.8rem 0;
-  color: #fff;
   transition: color 0.3s ease;
 }
 
 .reading-card:hover .reading-card-title {
-  color: var(--accent-gold-hover);
+  color: #000000;
 }
 
 .reading-card-desc {
-  font-family: var(--font-serif);
-  font-size: 1.08rem;
-  line-height: 1.55;
-  color: var(--text-muted);
+  font-family: "Times New Roman";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: #000000;
   margin: 0 0 1.5rem 0;
   flex-grow: 1;
 }
 
 .reading-author {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #7a7a7a;
+  display: none;
 }
 
+.reading-card-desc::after {
+  content: "читать";
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  color: #000000;
+  text-decoration: underline;
+  border-radius: 0px;
+  border-width: 0px;
+  border-style: none;
+  font-size: 16px;
+  font-weight: 400;
+  min-width: 0px;
+  min-height: 0px;
+  text-decoration: underline;
+  box-shadow: none;
+  background-color: transparent;
+  border-color: transparent;
+  font-family: "Times New Roman";
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
 
 /* 4. Articles Catalog Section */
 .catalog-section {
@@ -486,8 +542,8 @@ body.bg-christianity-custom::before {
   border-radius: 6px;
   text-decoration: none;
   box-sizing: border-box;
-  transition: border-color 0.3s ease, 
-              background-color 0.3s ease, 
+  transition: border-color 0.3s ease,
+              background-color 0.3s ease,
               transform 0.3s ease;
 }
 
@@ -519,7 +575,6 @@ body.bg-christianity-custom::before {
   line-height: 1.4;
 }
 
-
 /* Bottom Telegram Box adjustments */
 .bot-link-section {
   position: relative;
@@ -540,7 +595,6 @@ body.bg-christianity-custom::before {
   color: #fff !important;
 }
 
-
 /* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
@@ -549,20 +603,20 @@ body.bg-christianity-custom::before {
   .topics-grid {
     gap: 1.5rem;
   }
-  
+
   .nav-card {
     height: 420px;
     padding: 2.5rem 1.8rem 2rem;
   }
-  
+
   .card-title {
     font-size: 2.8rem;
   }
-  
+
   .readings-grid {
     gap: 1.5rem;
   }
-  
+
   .reading-card-title {
     font-size: 1.5rem;
   }
@@ -572,44 +626,44 @@ body.bg-christianity-custom::before {
   body.bg-christianity-custom {
     font-size: 17px;
   }
-  
+
   .christianity-container {
     padding: 2.5rem 1.2rem;
   }
-  
+
   /* Topics Nav */
   .topics-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .nav-card {
     height: auto;
     min-height: 280px;
     padding: 2.5rem 2rem;
   }
-  
+
   .card-desc {
     margin-top: 1.5rem;
   }
-  
+
   /* Editor Notebook Banner */
   .editor-notebook-section {
     padding: 3rem 1.5rem;
-    background-image: linear-gradient(to bottom, rgba(20, 19, 18, 0.9) 0%, rgba(20, 19, 18, 0.95) 100%), 
+    background-image: linear-gradient(to bottom, rgba(20, 19, 18, 0.9) 0%, rgba(20, 19, 18, 0.95) 100%),
                       url("/prorok/assets/images/christ1.png");
   }
-  
+
   .notebook-card {
     max-width: 100%;
     padding: 2.5rem 1.8rem;
     animation: none;
   }
-  
+
   .notebook-quote {
     font-size: 2.1rem;
   }
-  
+
   /* Weekly readings header & grid */
   .section-header {
     flex-direction: column;
@@ -617,40 +671,40 @@ body.bg-christianity-custom::before {
     gap: 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .weekly-title {
     font-size: 1.9rem;
   }
-  
+
   .weekly-title .script-word {
     font-size: 2.4rem;
   }
-  
+
   .readings-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .reading-card {
     max-width: 450px;
     margin: 0 auto;
   }
-  
+
   /* Catalog */
   .catalog-section {
     margin-top: 5rem;
   }
-  
+
   .catalog-title {
     font-size: 2rem;
     margin-bottom: 3rem;
   }
-  
+
   .catalog-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .catalog-item {
     padding: 1.4rem;
   }
