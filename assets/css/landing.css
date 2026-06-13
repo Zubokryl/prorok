@@ -137,7 +137,6 @@ main.scene {
 }
 
 .hero-title {
-  font-family: 'Caveat', cursive;
   text-align: center;
   line-height: 1.1;
   text-shadow: 0 4px 40px rgba(0,0,0,0.7);
@@ -191,6 +190,11 @@ main.scene {
   }
 }
 
+/* Custom Font Classes */
+.custom-font {
+  font-family: 'Caveat', cursive;
+}
+
 /* Glassmorphism Block — below title */
 .glass-wrap {
   position: relative;
@@ -226,7 +230,6 @@ main.scene {
 }
 
 .glass p {
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   /* увеличиваем размер текста на мобайле примерно в 1.5 раза (см. media ниже) */
   font-size: clamp(0.85rem, 2.5vw, 1rem);
 
@@ -238,6 +241,10 @@ main.scene {
   text-align: center;
 }
 
+/* Custom Font Classes */
+.custom-font {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+}
 
 /* Religious Symbols — centered below glass on mobile, right side vertical on desktop */
 .symbols {
