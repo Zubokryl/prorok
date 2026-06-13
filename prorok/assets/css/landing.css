@@ -27,6 +27,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-body);
 }
 
 main.scene {
@@ -136,7 +137,7 @@ main.scene {
 }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-family: 'Caveat', cursive;
   text-align: center;
   line-height: 1.1;
   text-shadow: 0 4px 40px rgba(0,0,0,0.7);
@@ -236,7 +237,6 @@ main.scene {
   margin: 0;
   text-align: center;
 }
-
 
 /* Religious Symbols — centered below glass on mobile, right side vertical on desktop */
 .symbols {
