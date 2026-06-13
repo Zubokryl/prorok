@@ -225,7 +225,7 @@ main.scene {
 }
 
 .glass p {
-  font-family: var(--font-body);
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   /* увеличиваем размер текста на мобайле примерно в 1.5 раза (см. media ниже) */
   font-size: clamp(0.85rem, 2.5vw, 1rem);
 
