@@ -144,7 +144,7 @@ main.scene {
   align-items: center;
   width: 100%;
   max-width: 150px;
-  margin: 0 auto 0.4rem;
+  margin: 0 auto 0.2rem;
   position: relative;
   z-index: 10;
 }
@@ -172,7 +172,7 @@ main.scene {
   object-fit: cover;
 }
 
-/* Squeezed staircase positions (no vertical distance) & animation delays */
+/* Squeezed staircase positions (extremely close overlap) & animation delays */
 .letter-o {
   align-self: flex-start;
   margin-left: 0%;
@@ -183,7 +183,7 @@ main.scene {
 .letter-d {
   align-self: flex-end;
   margin-right: 0%;
-  margin-top: -36px; /* Tight overlap on mobile */
+  margin-top: -48px; /* Extremely tight overlap on mobile */
   animation-delay: 0.25s;
   z-index: 3;
 }
@@ -191,7 +191,7 @@ main.scene {
 .letter-i {
   align-self: flex-start;
   margin-left: 8%;
-  margin-top: -36px;
+  margin-top: -48px;
   animation-delay: 0.4s;
   z-index: 2;
 }
@@ -199,7 +199,7 @@ main.scene {
 .letter-n {
   align-self: flex-end;
   margin-right: 4%;
-  margin-top: -36px;
+  margin-top: -48px;
   animation-delay: 0.55s;
   z-index: 1;
 }
@@ -210,12 +210,12 @@ main.scene {
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(0.95rem, 3.2vw, 1.8rem);
-  letter-spacing: 0.2em;
-  line-height: 1.1;
+  letter-spacing: 0.08em;
+  line-height: 1.0;
   text-align: center;
   color: rgba(255, 255, 255, 0.95);
   display: block;
-  margin: 0.6rem 0 0.2rem;
+  margin: -15px 0 2px 0; /* Pull text up to overlap the bottom letter */
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   font-style: normal;
   opacity: 0;
@@ -232,8 +232,8 @@ main.scene {
   letter-spacing: 0.08em;
   color: #d4c5a0;
   text-align: center;
-  margin: 0.2rem 0;
-  line-height: 1.1;
+  margin: 2px 0;
+  line-height: 1.0;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: titleEnter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -260,28 +260,34 @@ main.scene {
 @media (min-width: 481px) {
   .odin-ladder {
     max-width: 190px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
   }
   .letter-svg {
     width: 105px;
     height: 105px;
   }
   .letter-d, .letter-i, .letter-n {
-    margin-top: -46px; /* 105px height overlap */
+    margin-top: -58px; /* Squeezed vertically on tablet */
+  }
+  .nebosvod-title {
+    margin: -20px 0 2px 0; /* Pull up more on tablet */
   }
 }
 
 @media (min-width: 931px) {
   .odin-ladder {
     max-width: 220px;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
   }
   .letter-svg {
     width: 125px;
     height: 125px;
   }
   .letter-d, .letter-i, .letter-n {
-    margin-top: -55px; /* 125px height overlap */
+    margin-top: -72px; /* Squeezed vertically on desktop */
+  }
+  .nebosvod-title {
+    margin: -28px 0 2px 0; /* Pull up more on desktop */
   }
 }
 
