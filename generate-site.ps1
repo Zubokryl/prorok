@@ -83,7 +83,7 @@ $landingBotBox = @"
             </a>
             <p class="landing-bot-text">
                 <strong>Бот в Telegram</strong>
-                что говорят пророки о вашей ситуации. Поиск по Священным Текстам
+                Поиск по Священным Текстам
             </p>
         </div>
 "@
@@ -754,3 +754,4 @@ New-SearchIndex -slugs $allSlugs -meta $allMeta
 Write-Host ""
 Write-Host "Done."
 Write-Host "Output: $outputDir"
+
