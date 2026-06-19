@@ -11,10 +11,9 @@
 .scene {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   color: #f4ecdc;
   display: flex;
   flex-direction: column;
@@ -22,6 +21,7 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -143,17 +143,17 @@ main.scene {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 250px;
-  margin: 0 auto 0.6rem;
+  max-width: 150px;
+  margin: 0 auto 0.4rem;
   position: relative;
   z-index: 10;
 }
 
 .letter-svg {
-  width: clamp(100px, 26vw, 140px);
-  height: clamp(100px, 26vw, 140px);
+  width: clamp(75px, 18vw, 90px);
+  height: clamp(75px, 18vw, 90px);
   display: block;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.7));
   overflow: visible;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
@@ -163,7 +163,7 @@ main.scene {
 
 .letter-svg:hover {
   transform: scale(1.06) translateZ(0);
-  z-index: 50 !important; /* Bring hovered letter to the front */
+  z-index: 50 !important;
 }
 
 .letter-video {
@@ -172,7 +172,7 @@ main.scene {
   object-fit: cover;
 }
 
-/* Tight staircase positions & animation delays */
+/* Squeezed staircase positions (no vertical distance) & animation delays */
 .letter-o {
   align-self: flex-start;
   margin-left: 0%;
@@ -183,7 +183,7 @@ main.scene {
 .letter-d {
   align-self: flex-end;
   margin-right: 0%;
-  margin-top: -42px; /* Tight overlap on mobile */
+  margin-top: -36px; /* Tight overlap on mobile */
   animation-delay: 0.25s;
   z-index: 3;
 }
@@ -191,7 +191,7 @@ main.scene {
 .letter-i {
   align-self: flex-start;
   margin-left: 8%;
-  margin-top: -42px;
+  margin-top: -36px;
   animation-delay: 0.4s;
   z-index: 2;
 }
@@ -199,23 +199,23 @@ main.scene {
 .letter-n {
   align-self: flex-end;
   margin-right: 4%;
-  margin-top: -42px;
+  margin-top: -36px;
   animation-delay: 0.55s;
   z-index: 1;
 }
 
 /* --- NEBOSVOD Heading --- */
 .nebosvod-title {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 300;
+  font-family: 'Archivo Black', 'Arial Black', sans-serif;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: clamp(1.2rem, 3.8vw, 2.1rem);
-  letter-spacing: 0.25em;
-  line-height: 1.2;
+  font-size: clamp(0.95rem, 3.2vw, 1.8rem);
+  letter-spacing: 0.2em;
+  line-height: 1.1;
   text-align: center;
   color: rgba(255, 255, 255, 0.95);
   display: block;
-  margin: 0.8rem 0 0.4rem;
+  margin: 0.6rem 0 0.2rem;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   font-style: normal;
   opacity: 0;
@@ -225,14 +225,14 @@ main.scene {
 
 /* --- WAYS TITLE --- */
 .ways-title {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 800;
+  font-family: 'Archivo Black', 'Arial Black', sans-serif;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: clamp(1.1rem, 3.5vw, 1.9rem);
+  font-size: clamp(0.85rem, 2.8vw, 1.5rem);
   letter-spacing: 0.08em;
-  color: #d4c5a0; /* Amber/gold accent color consistent with theme */
+  color: #d4c5a0;
   text-align: center;
-  margin: 0.4rem 0;
+  margin: 0.2rem 0;
   line-height: 1.1;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -244,12 +244,12 @@ main.scene {
 .cursive-subtitle {
   font-family: 'Bad Script', cursive;
   font-weight: 400;
-  font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+  font-size: clamp(0.95rem, 2.6vw, 1.4rem);
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
-  margin: 0.8rem auto 0;
-  max-width: 520px;
-  line-height: 1.4;
+  margin: 0.4rem auto 0;
+  max-width: 480px;
+  line-height: 1.35;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: titleEnter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -259,29 +259,29 @@ main.scene {
 /* Overrides for larger screens */
 @media (min-width: 481px) {
   .odin-ladder {
-    max-width: 290px;
-    margin-bottom: 0.8rem;
+    max-width: 190px;
+    margin-bottom: 0.5rem;
   }
   .letter-svg {
-    width: 140px;
-    height: 140px;
+    width: 105px;
+    height: 105px;
   }
   .letter-d, .letter-i, .letter-n {
-    margin-top: -55px; /* Overlap for 140px size */
+    margin-top: -46px; /* 105px height overlap */
   }
 }
 
 @media (min-width: 931px) {
   .odin-ladder {
-    max-width: 330px;
-    margin-bottom: 1rem;
+    max-width: 220px;
+    margin-bottom: 0.6rem;
   }
   .letter-svg {
-    width: 165px;
-    height: 165px;
+    width: 125px;
+    height: 125px;
   }
   .letter-d, .letter-i, .letter-n {
-    margin-top: -72px; /* Overlap for 165px size */
+    margin-top: -55px; /* 125px height overlap */
   }
 }
 
