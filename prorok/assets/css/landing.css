@@ -149,11 +149,11 @@ main.scene {
 /* --- NEW HERO TYPOGRAPHY LAYOUT --- */
 .hero-word-cursive {
   font-family: 'Marianna', cursive;
-  font-size: clamp(3.2rem, 11vw, 6.5rem);
+  font-size: clamp(6.4rem, 22vw, 13rem); /* увеличен в два раза */
   font-weight: normal;
   text-align: center;
   line-height: 0.95;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: titleEnter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
@@ -161,15 +161,21 @@ main.scene {
 .word-odin {
   color: var(--milky, #f4ecdc);
   animation-delay: 0.1s;
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0.95;
 }
 
 .word-mnozhestvo {
   color: #d4c5a0;
   animation-delay: 0.5s;
-  margin-top: 1.2rem;
-  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 1.5rem; /* отступ после слова "небосвод" */
+  margin-bottom: 0;
+  opacity: 0.95;
 }
 
 .hero-word-video {
@@ -190,12 +196,18 @@ main.scene {
   animation-delay: 0.3s;
   width: 90%;
   max-width: 650px;
+  position: relative;
+  z-index: 2;
+  margin-top: -6.5vw; /* накладываем поверх низа слова "один" */
 }
 
 .word-dorog {
   animation-delay: 0.7s;
-  width: 60%;
-  max-width: 400px;
+  width: 90%; /* одинаковый размер со словом "небосвод" */
+  max-width: 650px; /* одинаковый размер со словом "небосвод" */
+  position: relative;
+  z-index: 2;
+  margin-top: -6.5vw; /* накладываем поверх низа слова "множество" */
 }
 
 .word-svg {
@@ -623,15 +635,11 @@ main.scene {
   }
 
   .hero-word-cursive {
-    font-size: clamp(2.8rem, 10vw, 4.5rem);
+    font-size: clamp(5rem, 16vw, 8rem);
   }
 
-  .word-nebosvod {
-    max-width: 420px;
-  }
-
-  .word-dorog {
-    max-width: 280px;
+  .word-nebosvod, .word-dorog {
+    max-width: 340px;
   }
 
   .sym {
