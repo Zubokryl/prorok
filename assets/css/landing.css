@@ -250,7 +250,7 @@ main.scene {
 .write-path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: writeEffect 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: writeEffect 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .path-odin {
@@ -259,7 +259,7 @@ main.scene {
 
 .path-mnozhestvo {
   animation-delay: 1.0s;
-  animation-duration: 2.8s;
+  animation-duration: 5.6s;
 }
 
 @keyframes writeEffect {
@@ -809,6 +809,28 @@ main.scene {
 
   .hero {
     margin-bottom: 1rem;
+    transform: translateY(-4vh); /* All words raised slightly higher */
+  }
+
+  .odin-svg {
+    max-width: 640px; /* Increased cursive word size */
+  }
+
+  .mnozhestvo-svg {
+    max-width: 1024px; /* Increased cursive word size, matching letter size to odin-svg (1.6 ratio) */
+  }
+
+  .odin-svg .cursive-text,
+  .mnozhestvo-svg .cursive-text {
+    font-size: 150px; /* Equal font-size for matching cursive word scale */
+  }
+
+  .word-nebosvod {
+    margin-top: -3.2vw; /* Overlap decreased, so they barely go under the video words */
+  }
+
+  .word-dorog {
+    margin-top: -2vw; /* Overlap decreased, so they barely go under the video words */
   }
 
   .glass-wrap {
