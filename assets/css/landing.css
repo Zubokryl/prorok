@@ -148,14 +148,44 @@ main.scene {
 
 /* --- NEW HERO TYPOGRAPHY LAYOUT --- */
 .hero-word-cursive {
-  font-family: 'Marianna', cursive;
-  font-size: clamp(6.4rem, 22vw, 13rem); /* увеличен в два раза */
-  font-weight: normal;
-  text-align: center;
-  line-height: 0.95;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   animation: titleEnter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.writing-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.odin-svg {
+  width: 90%;
+  max-width: 600px;
+}
+
+.mnozhestvo-svg {
+  width: 90%;
+  max-width: 750px;
+}
+
+.cursive-text {
+  font-family: 'Marianna', cursive;
+  font-weight: normal;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.odin-svg .cursive-text {
+  font-size: 150px;
+}
+
+.mnozhestvo-svg .cursive-text {
+  font-size: 130px;
 }
 
 .word-odin {
@@ -165,7 +195,6 @@ main.scene {
   z-index: 1;
   margin-top: 0;
   margin-bottom: 0;
-  opacity: 0.95;
 }
 
 .word-mnozhestvo {
@@ -173,9 +202,8 @@ main.scene {
   animation-delay: 0.5s;
   position: relative;
   z-index: 1;
-  margin-top: 1.5rem; /* отступ после слова "небосвод" */
+  margin-top: 0.1vw; /* уменьшено расстояние между словами "небосвод" и "дорог" */
   margin-bottom: 0;
-  opacity: 0.95;
 }
 
 .hero-word-video {
@@ -198,7 +226,7 @@ main.scene {
   max-width: 650px;
   position: relative;
   z-index: 2;
-  margin-top: -6.5vw; /* накладываем поверх низа слова "один" */
+  margin-top: -10vw; /* накладываем поверх низа слова "один" */
 }
 
 .word-dorog {
@@ -207,7 +235,7 @@ main.scene {
   max-width: 650px; /* одинаковый размер со словом "небосвод" */
   position: relative;
   z-index: 2;
-  margin-top: -6.5vw; /* накладываем поверх низа слова "множество" */
+  margin-top: -8vw; /* накладываем поверх низа слова "множество" */
 }
 
 .word-svg {
@@ -216,6 +244,28 @@ main.scene {
   display: block;
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.8));
   overflow: visible;
+}
+
+/* --- SVG HANDWRITING ANIMATION --- */
+.write-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: writeEffect 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.path-odin {
+  animation-delay: 0.2s;
+}
+
+.path-mnozhestvo {
+  animation-delay: 1.0s;
+  animation-duration: 2.8s;
+}
+
+@keyframes writeEffect {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .letter-video {
@@ -634,12 +684,12 @@ main.scene {
     padding-top: 1rem;
   }
 
-  .hero-word-cursive {
-    font-size: clamp(5rem, 16vw, 8rem);
+  .odin-svg, .mnozhestvo-svg {
+    max-width: 280px;
   }
 
   .word-nebosvod, .word-dorog {
-    max-width: 340px;
+    max-width: 280px;
   }
 
   .sym {
