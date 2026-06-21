@@ -17,7 +17,7 @@
     bgImg.style.transform = 'translate3d(0px, 0px, 0)';
   });
 
-  /* Slow down videos inside letters and stop them 2 seconds earlier */
+  /* Slow down videos inside letters and stop them 3 seconds earlier */
   const videos = document.querySelectorAll('.letter-video');
   videos.forEach(video => {
     video.playbackRate = 0.75;
@@ -26,7 +26,7 @@
     });
 
     video.addEventListener('timeupdate', function onTimeUpdate() {
-      if (video.duration && video.currentTime >= video.duration - 2) {
+      if (video.duration && video.currentTime >= video.duration - 5) {
         video.pause();
         video.removeEventListener('timeupdate', onTimeUpdate);
       }
