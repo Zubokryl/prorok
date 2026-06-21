@@ -164,7 +164,7 @@ main.scene {
 }
 
 .odin-svg {
-  width: 90%;
+  width: 56.25%; /* Capped to match the letter size of mnozhestvo-svg (500/800 ratio) */
   max-width: 600px;
 }
 
@@ -185,7 +185,7 @@ main.scene {
 }
 
 .mnozhestvo-svg .cursive-text {
-  font-size: 130px;
+  font-size: 150px; /* Equal font size for matching cursive word scale */
 }
 
 .word-odin {
@@ -250,7 +250,7 @@ main.scene {
 .write-path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: writeEffect 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: writeEffect 8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .path-odin {
@@ -259,7 +259,7 @@ main.scene {
 
 .path-mnozhestvo {
   animation-delay: 1.0s;
-  animation-duration: 5.6s;
+  animation-duration: 11.2s;
 }
 
 @keyframes writeEffect {
@@ -684,7 +684,11 @@ main.scene {
     padding-top: 1rem;
   }
 
-  .odin-svg, .mnozhestvo-svg {
+  .odin-svg {
+    max-width: 175px; /* Capped to match letter size of mnozhestvo-svg (280 * 0.625) */
+  }
+
+  .mnozhestvo-svg {
     max-width: 280px;
   }
 
@@ -840,7 +844,7 @@ main.scene {
   }
 
   .word-dorog {
-    margin-top: -2vw; /* Overlap decreased, so they barely go under the video words */
+    margin-top: calc(-2vw - 3rem); /* Raised higher by 3rem on desktop */
   }
 
   .glass-wrap {
