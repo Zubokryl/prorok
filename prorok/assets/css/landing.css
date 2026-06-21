@@ -825,8 +825,18 @@ main.scene {
     font-size: 150px; /* Equal font-size for matching cursive word scale */
   }
 
+  /* Draw cursive words on top of video words so they are not covered/blocked */
+  .word-odin,
+  .word-mnozhestvo {
+    z-index: 3;
+  }
+
   .word-nebosvod {
     margin-top: -3.2vw; /* Overlap decreased, so they barely go under the video words */
+  }
+
+  .word-mnozhestvo {
+    margin-top: -5.5vw; /* Raise the phrase "множество дорог" higher, closing the gap with the first phrase */
   }
 
   .word-dorog {
