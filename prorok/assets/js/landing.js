@@ -26,7 +26,7 @@
     });
 
     video.addEventListener('timeupdate', function onTimeUpdate() {
-      if (video.duration && video.currentTime >= video.duration - 5) {
+      if (video.duration && video.duration > 5 && video.currentTime > 0.1 && video.currentTime >= video.duration - 5) {
         video.pause();
         video.removeEventListener('timeupdate', onTimeUpdate);
       }

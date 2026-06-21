@@ -202,6 +202,10 @@ main.scene {
   animation-delay: 0.5s;
   position: relative;
 
+  margin-top: 0.1vw; /* уменьшено расстояние между словами "небосвод" и "дорог" */
+  margin-bottom: 0;
+
+  /* поднять фразу "множество дорог" выше */
 .hero-word-video {
   width: 100%;
   display: flex;
